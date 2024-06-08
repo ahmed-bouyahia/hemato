@@ -609,3 +609,71 @@ on_logout_amin7_clicked                (GtkButton       *button,
 void
 on_butlogout_SDOC_clicked              (GtkButton       *button,
                                         gpointer         user_data);
+
+void
+on_testingrefresh_clicked              (GtkButton       *button,
+                                        gpointer         user_data);
+
+void
+on_Refreshdonorchange_clicked          (GtkButton       *button,
+                                        gpointer         user_data);
+
+void
+on_refreshdonorcancel_clicked          (GtkButton       *button,
+                                        gpointer         user_data);
+
+void
+on_refreshusercreate_clicked           (GtkButton       *button,
+                                        gpointer         user_data);
+
+void
+on_refreshuserupdate_clicked           (GtkButton       *button,
+                                        gpointer         user_data);
+
+void
+on_refreshuserdelete_clicked           (GtkButton       *button,
+                                        gpointer         user_data);
+
+void
+on_refreshetscreate_clicked            (GtkButton       *button,
+                                        gpointer         user_data);
+
+void
+on_refreshetsupdate_clicked            (GtkButton       *button,
+                                        gpointer         user_data);
+
+void
+on_refreshetsdelete_clicked            (GtkButton       *button,
+                                        gpointer         user_data);
+
+void
+on_refreshdirupdate_clicked            (GtkButton       *button,
+                                        gpointer         user_data);
+
+void
+on_refreshdirdelete_clicked            (GtkButton       *button,
+                                        gpointer         user_data);
+
+void
+on_refreshdoccreate_clicked            (GtkButton       *button,
+                                        gpointer         user_data);
+
+void
+on_refreshdocmod_clicked               (GtkButton       *button,
+                                        gpointer         user_data);
+
+void
+on_refreshdocdel_clicked               (GtkButton       *button,
+                                        gpointer         user_data);
+
+void
+on_refreshdocstat_clicked              (GtkButton       *button,
+                                        gpointer         user_data);
+
+void
+on_Refreshdonorbook_clicked            (GtkButton       *button,
+                                        gpointer         user_data);
+
+void
+on_refreshdiradd_clicked               (GtkButton       *button,
+                                        gpointer         user_data);

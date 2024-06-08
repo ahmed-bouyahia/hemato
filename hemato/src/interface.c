@@ -45,6 +45,7 @@ create_homepage (void)
   GtkWidget *hbox344;
   GtkWidget *image354;
   GtkWidget *label1574;
+  GtkWidget *loginoutput;
   GtkWidget *llabelog_in;
   GtkWidget *fixed3;
   GtkWidget *name_sign;
@@ -148,6 +149,11 @@ create_homepage (void)
   label1574 = gtk_label_new_with_mnemonic (_("LOG IN"));
   gtk_widget_show (label1574);
   gtk_box_pack_start (GTK_BOX (hbox344), label1574, FALSE, FALSE, 0);
+
+  loginoutput = gtk_label_new ("");
+  gtk_widget_show (loginoutput);
+  gtk_fixed_put (GTK_FIXED (fixed2), loginoutput, 248, 360);
+  gtk_widget_set_size_request (loginoutput, 500, 40);
 
   llabelog_in = gtk_label_new (_("<span font_size=\"xx-large\" color=\"#BE3144\" font_family=\"Courier New\"><i><b>Login</b></i></span>"));
   gtk_widget_show (llabelog_in);
@@ -288,6 +294,7 @@ create_homepage (void)
   GLADE_HOOKUP_OBJECT (homepage, hbox344, "hbox344");
   GLADE_HOOKUP_OBJECT (homepage, image354, "image354");
   GLADE_HOOKUP_OBJECT (homepage, label1574, "label1574");
+  GLADE_HOOKUP_OBJECT (homepage, loginoutput, "loginoutput");
   GLADE_HOOKUP_OBJECT (homepage, llabelog_in, "llabelog_in");
   GLADE_HOOKUP_OBJECT (homepage, fixed3, "fixed3");
   GLADE_HOOKUP_OBJECT (homepage, name_sign, "name_sign");
@@ -319,7 +326,7 @@ create_appointement (void)
   GtkWidget *appointement;
   GtkWidget *notebook2;
   GtkWidget *notebook3;
-  GtkWidget *notebook4;
+  GtkWidget *notebookdonorcrud;
   GtkWidget *fixed6;
   GtkObject *add_day_adj;
   GtkWidget *add_day;
@@ -335,15 +342,8 @@ create_appointement (void)
   GtkWidget *radiordv1;
   GSList *radiordv1_group = NULL;
   GtkWidget *radiordv2;
-  GtkWidget *outmsgjj;
-  GtkWidget *book;
-  GtkWidget *alignment14;
-  GtkWidget *hbox14;
-  GtkWidget *image30;
-  GtkWidget *label116;
   GtkWidget *check_avail_time;
   GtkWidget *label26;
-  GtkWidget *msg_ajout;
   GtkWidget *label114;
   GtkWidget *image373;
   GtkWidget *log_out_book_rdv;
@@ -351,20 +351,32 @@ create_appointement (void)
   GtkWidget *hbox1;
   GtkWidget *image17;
   GtkWidget *label99;
+  GtkWidget *outmsgjj;
+  GtkWidget *msg_ajout;
+  GtkWidget *book;
+  GtkWidget *alignment14;
+  GtkWidget *hbox14;
+  GtkWidget *image30;
+  GtkWidget *label116;
+  GtkWidget *Refreshdonorbook;
+  GtkWidget *alignment351;
+  GtkWidget *hbox351;
+  GtkWidget *image382;
+  GtkWidget *label1582;
   GtkWidget *label19;
   GtkWidget *fixed7;
   GtkWidget *treeviewshow1;
-  GtkWidget *show_rdv;
-  GtkWidget *alignment2;
-  GtkWidget *hbox2;
-  GtkWidget *image18;
-  GtkWidget *label100;
   GtkWidget *log_out_show_rdv;
   GtkWidget *alignment3;
   GtkWidget *hbox3;
   GtkWidget *image19;
   GtkWidget *label101;
-  GtkWidget *qkdjdq;
+  GtkWidget *show_rdv;
+  GtkWidget *alignment2;
+  GtkWidget *hbox2;
+  GtkWidget *image18;
+  GtkWidget *label100;
+  GtkWidget *label1580;
   GtkWidget *fixed8;
   GtkWidget *id_ent_modify;
   GtkWidget *label38;
@@ -393,11 +405,6 @@ create_appointement (void)
   GtkWidget *iddmodd;
   GtkWidget *est_modify;
   GtkWidget *modif_msg;
-  GtkWidget *chercher_modif;
-  GtkWidget *alignment4;
-  GtkWidget *hbox4;
-  GtkWidget *image20;
-  GtkWidget *label102;
   GtkWidget *chek_modify;
   GtkWidget *alignment5;
   GtkWidget *hbox5;
@@ -415,6 +422,16 @@ create_appointement (void)
   GtkWidget *hbox7;
   GtkWidget *image23;
   GtkWidget *label105;
+  GtkWidget *Refreshdonorchange;
+  GtkWidget *alignment349;
+  GtkWidget *hbox349;
+  GtkWidget *image380;
+  GtkWidget *label1579;
+  GtkWidget *chercher_modif;
+  GtkWidget *alignment4;
+  GtkWidget *hbox4;
+  GtkWidget *image20;
+  GtkWidget *label102;
   GtkWidget *label21;
   GtkWidget *fixed5;
   GtkWidget *id_enter;
@@ -436,11 +453,6 @@ create_appointement (void)
   GtkWidget *sorhori;
   GtkWidget *rcancelmsg;
   GtkWidget *label123;
-  GtkWidget *search_cancel;
-  GtkWidget *alignment13;
-  GtkWidget *hbox13;
-  GtkWidget *image29;
-  GtkWidget *label115;
   GtkWidget *cancel_ip;
   GtkWidget *alignment9;
   GtkWidget *hbox9;
@@ -451,24 +463,32 @@ create_appointement (void)
   GtkWidget *hbox8;
   GtkWidget *image24;
   GtkWidget *label106;
+  GtkWidget *search_cancel;
+  GtkWidget *alignment13;
+  GtkWidget *hbox13;
+  GtkWidget *image29;
+  GtkWidget *label115;
+  GtkWidget *refreshdonorcancel;
+  GtkWidget *alignment350;
+  GtkWidget *hbox350;
+  GtkWidget *image381;
+  GtkWidget *label1581;
   GtkWidget *label18;
   GtkWidget *label16;
   GtkWidget *fixed9;
-  GtkWidget *full_name_rdv;
   GtkWidget *treeviewhisto;
   GtkWidget *donor_id__history;
-  GtkWidget *label98;
-  GtkWidget *show_history;
-  GtkWidget *alignment11;
-  GtkWidget *hbox11;
-  GtkWidget *image27;
-  GtkWidget *label112;
   GtkWidget *log_out_history_rdv;
   GtkWidget *alignment10;
   GtkWidget *hbox10;
   GtkWidget *image26;
   GtkWidget *label111;
   GtkWidget *image361;
+  GtkWidget *show_history;
+  GtkWidget *alignment11;
+  GtkWidget *hbox11;
+  GtkWidget *image27;
+  GtkWidget *label112;
   GtkWidget *label17;
   GtkWidget *label15;
 
@@ -485,16 +505,16 @@ create_appointement (void)
   gtk_notebook_set_tab_label_packing (GTK_NOTEBOOK (notebook2), notebook3,
                                       TRUE, TRUE, GTK_PACK_START);
 
-  notebook4 = gtk_notebook_new ();
-  gtk_widget_show (notebook4);
-  gtk_container_add (GTK_CONTAINER (notebook3), notebook4);
-  gtk_notebook_set_tab_label_packing (GTK_NOTEBOOK (notebook3), notebook4,
+  notebookdonorcrud = gtk_notebook_new ();
+  gtk_widget_show (notebookdonorcrud);
+  gtk_container_add (GTK_CONTAINER (notebook3), notebookdonorcrud);
+  gtk_notebook_set_tab_label_packing (GTK_NOTEBOOK (notebook3), notebookdonorcrud,
                                       TRUE, TRUE, GTK_PACK_START);
 
   fixed6 = gtk_fixed_new ();
   gtk_widget_show (fixed6);
-  gtk_container_add (GTK_CONTAINER (notebook4), fixed6);
-  gtk_notebook_set_tab_label_packing (GTK_NOTEBOOK (notebook4), fixed6,
+  gtk_container_add (GTK_CONTAINER (notebookdonorcrud), fixed6);
+  gtk_notebook_set_tab_label_packing (GTK_NOTEBOOK (notebookdonorcrud), fixed6,
                                       TRUE, TRUE, GTK_PACK_START);
 
   add_day_adj = gtk_adjustment_new (1, 1, 31, 1, 10, 10);
@@ -557,32 +577,6 @@ create_appointement (void)
   gtk_radio_button_set_group (GTK_RADIO_BUTTON (radiordv2), radiordv1_group);
   radiordv1_group = gtk_radio_button_get_group (GTK_RADIO_BUTTON (radiordv2));
 
-  outmsgjj = gtk_label_new ("");
-  gtk_widget_show (outmsgjj);
-  gtk_fixed_put (GTK_FIXED (fixed6), outmsgjj, 520, 448);
-  gtk_widget_set_size_request (outmsgjj, 432, 56);
-
-  book = gtk_button_new ();
-  gtk_widget_show (book);
-  gtk_fixed_put (GTK_FIXED (fixed6), book, 632, 360);
-  gtk_widget_set_size_request (book, 114, 48);
-
-  alignment14 = gtk_alignment_new (0.5, 0.5, 0, 0);
-  gtk_widget_show (alignment14);
-  gtk_container_add (GTK_CONTAINER (book), alignment14);
-
-  hbox14 = gtk_hbox_new (FALSE, 2);
-  gtk_widget_show (hbox14);
-  gtk_container_add (GTK_CONTAINER (alignment14), hbox14);
-
-  image30 = gtk_image_new_from_stock ("gtk-add", GTK_ICON_SIZE_BUTTON);
-  gtk_widget_show (image30);
-  gtk_box_pack_start (GTK_BOX (hbox14), image30, FALSE, FALSE, 0);
-
-  label116 = gtk_label_new_with_mnemonic (_("   BOOK"));
-  gtk_widget_show (label116);
-  gtk_box_pack_start (GTK_BOX (hbox14), label116, FALSE, FALSE, 0);
-
   check_avail_time = gtk_button_new_with_mnemonic (_("CHECK AVAILABLE TIME"));
   gtk_widget_show (check_avail_time);
   gtk_fixed_put (GTK_FIXED (fixed6), check_avail_time, 600, 248);
@@ -593,12 +587,6 @@ create_appointement (void)
   gtk_fixed_put (GTK_FIXED (fixed6), label26, 432, 48);
   gtk_widget_set_size_request (label26, 500, 30);
   gtk_label_set_use_markup (GTK_LABEL (label26), TRUE);
-
-  msg_ajout = gtk_label_new (_("<span font_size=\"large\" color=\"#F05941\" font_family=\"Courier New\"><i><b></b></i></span>"));
-  gtk_widget_show (msg_ajout);
-  gtk_fixed_put (GTK_FIXED (fixed6), msg_ajout, 528, 400);
-  gtk_widget_set_size_request (msg_ajout, 440, 56);
-  gtk_label_set_use_markup (GTK_LABEL (msg_ajout), TRUE);
 
   label114 = gtk_label_new (_("<span font_size=\"large\" color=\"#F05941\" font_family=\"Courier New\"><i><b>Message : </b></i></span>"));
   gtk_widget_show (label114);
@@ -632,43 +620,75 @@ create_appointement (void)
   gtk_widget_show (label99);
   gtk_box_pack_start (GTK_BOX (hbox1), label99, FALSE, FALSE, 0);
 
+  outmsgjj = gtk_label_new ("");
+  gtk_widget_show (outmsgjj);
+  gtk_fixed_put (GTK_FIXED (fixed6), outmsgjj, 520, 448);
+  gtk_widget_set_size_request (outmsgjj, 432, 56);
+
+  msg_ajout = gtk_label_new (_("<span font_size=\"large\" color=\"#F05941\" font_family=\"Courier New\"><i><b></b></i></span>"));
+  gtk_widget_show (msg_ajout);
+  gtk_fixed_put (GTK_FIXED (fixed6), msg_ajout, 528, 400);
+  gtk_widget_set_size_request (msg_ajout, 440, 56);
+  gtk_label_set_use_markup (GTK_LABEL (msg_ajout), TRUE);
+
+  book = gtk_button_new ();
+  gtk_widget_show (book);
+  gtk_fixed_put (GTK_FIXED (fixed6), book, 632, 360);
+  gtk_widget_set_size_request (book, 114, 48);
+
+  alignment14 = gtk_alignment_new (0.5, 0.5, 0, 0);
+  gtk_widget_show (alignment14);
+  gtk_container_add (GTK_CONTAINER (book), alignment14);
+
+  hbox14 = gtk_hbox_new (FALSE, 2);
+  gtk_widget_show (hbox14);
+  gtk_container_add (GTK_CONTAINER (alignment14), hbox14);
+
+  image30 = gtk_image_new_from_stock ("gtk-add", GTK_ICON_SIZE_BUTTON);
+  gtk_widget_show (image30);
+  gtk_box_pack_start (GTK_BOX (hbox14), image30, FALSE, FALSE, 0);
+
+  label116 = gtk_label_new_with_mnemonic (_("   BOOK"));
+  gtk_widget_show (label116);
+  gtk_box_pack_start (GTK_BOX (hbox14), label116, FALSE, FALSE, 0);
+
+  Refreshdonorbook = gtk_button_new ();
+  gtk_widget_show (Refreshdonorbook);
+  gtk_fixed_put (GTK_FIXED (fixed6), Refreshdonorbook, 1020, 16);
+  gtk_widget_set_size_request (Refreshdonorbook, 120, 37);
+
+  alignment351 = gtk_alignment_new (0.5, 0.5, 0, 0);
+  gtk_widget_show (alignment351);
+  gtk_container_add (GTK_CONTAINER (Refreshdonorbook), alignment351);
+
+  hbox351 = gtk_hbox_new (FALSE, 2);
+  gtk_widget_show (hbox351);
+  gtk_container_add (GTK_CONTAINER (alignment351), hbox351);
+
+  image382 = gtk_image_new_from_stock ("gtk-clear", GTK_ICON_SIZE_BUTTON);
+  gtk_widget_show (image382);
+  gtk_box_pack_start (GTK_BOX (hbox351), image382, FALSE, FALSE, 0);
+
+  label1582 = gtk_label_new_with_mnemonic (_("Refresh"));
+  gtk_widget_show (label1582);
+  gtk_box_pack_start (GTK_BOX (hbox351), label1582, FALSE, FALSE, 0);
+
   label19 = gtk_label_new (_("<span font_size=\"xx-large\" color=\"#BE3144\" font_family=\"Courier New\"><i><b>BOOK</b></i></span>"));
   gtk_widget_show (label19);
-  gtk_notebook_set_tab_label (GTK_NOTEBOOK (notebook4), gtk_notebook_get_nth_page (GTK_NOTEBOOK (notebook4), 0), label19);
+  gtk_notebook_set_tab_label (GTK_NOTEBOOK (notebookdonorcrud), gtk_notebook_get_nth_page (GTK_NOTEBOOK (notebookdonorcrud), 0), label19);
   gtk_widget_set_size_request (label19, 45, 28);
   gtk_label_set_use_markup (GTK_LABEL (label19), TRUE);
 
   fixed7 = gtk_fixed_new ();
   gtk_widget_show (fixed7);
-  gtk_container_add (GTK_CONTAINER (notebook4), fixed7);
-  gtk_notebook_set_tab_label_packing (GTK_NOTEBOOK (notebook4), fixed7,
+  gtk_container_add (GTK_CONTAINER (notebookdonorcrud), fixed7);
+  gtk_notebook_set_tab_label_packing (GTK_NOTEBOOK (notebookdonorcrud), fixed7,
                                       TRUE, TRUE, GTK_PACK_START);
 
   treeviewshow1 = gtk_tree_view_new ();
   gtk_widget_show (treeviewshow1);
   gtk_fixed_put (GTK_FIXED (fixed7), treeviewshow1, 360, 112);
   gtk_widget_set_size_request (treeviewshow1, 568, 264);
-
-  show_rdv = gtk_button_new ();
-  gtk_widget_show (show_rdv);
-  gtk_fixed_put (GTK_FIXED (fixed7), show_rdv, 576, 32);
-  gtk_widget_set_size_request (show_rdv, 122, 37);
-
-  alignment2 = gtk_alignment_new (0.5, 0.5, 0, 0);
-  gtk_widget_show (alignment2);
-  gtk_container_add (GTK_CONTAINER (show_rdv), alignment2);
-
-  hbox2 = gtk_hbox_new (FALSE, 2);
-  gtk_widget_show (hbox2);
-  gtk_container_add (GTK_CONTAINER (alignment2), hbox2);
-
-  image18 = gtk_image_new_from_stock ("gtk-refresh", GTK_ICON_SIZE_BUTTON);
-  gtk_widget_show (image18);
-  gtk_box_pack_start (GTK_BOX (hbox2), image18, FALSE, FALSE, 0);
-
-  label100 = gtk_label_new_with_mnemonic (_("   REFRESH"));
-  gtk_widget_show (label100);
-  gtk_box_pack_start (GTK_BOX (hbox2), label100, FALSE, FALSE, 0);
 
   log_out_show_rdv = gtk_button_new ();
   gtk_widget_show (log_out_show_rdv);
@@ -691,16 +711,36 @@ create_appointement (void)
   gtk_widget_show (label101);
   gtk_box_pack_start (GTK_BOX (hbox3), label101, FALSE, FALSE, 0);
 
-  qkdjdq = gtk_label_new (_("<span font_size=\"xx-large\" color=\"#BE3144\" font_family=\"Courier New\"><i><b>SHOW</b></i></span>"));
-  gtk_widget_show (qkdjdq);
-  gtk_notebook_set_tab_label (GTK_NOTEBOOK (notebook4), gtk_notebook_get_nth_page (GTK_NOTEBOOK (notebook4), 1), qkdjdq);
-  gtk_widget_set_size_request (qkdjdq, 57, -1);
-  gtk_label_set_use_markup (GTK_LABEL (qkdjdq), TRUE);
+  show_rdv = gtk_button_new ();
+  gtk_widget_show (show_rdv);
+  gtk_fixed_put (GTK_FIXED (fixed7), show_rdv, 576, 32);
+  gtk_widget_set_size_request (show_rdv, 122, 37);
+
+  alignment2 = gtk_alignment_new (0.5, 0.5, 0, 0);
+  gtk_widget_show (alignment2);
+  gtk_container_add (GTK_CONTAINER (show_rdv), alignment2);
+
+  hbox2 = gtk_hbox_new (FALSE, 2);
+  gtk_widget_show (hbox2);
+  gtk_container_add (GTK_CONTAINER (alignment2), hbox2);
+
+  image18 = gtk_image_new_from_stock ("gtk-refresh", GTK_ICON_SIZE_BUTTON);
+  gtk_widget_show (image18);
+  gtk_box_pack_start (GTK_BOX (hbox2), image18, FALSE, FALSE, 0);
+
+  label100 = gtk_label_new_with_mnemonic (_("   REFRESH"));
+  gtk_widget_show (label100);
+  gtk_box_pack_start (GTK_BOX (hbox2), label100, FALSE, FALSE, 0);
+
+  label1580 = gtk_label_new (_("<span font_size=\"xx-large\" color=\"#BE3144\" font_family=\"Courier New\"><i><b>SHOW</b></i></span>"));
+  gtk_widget_show (label1580);
+  gtk_notebook_set_tab_label (GTK_NOTEBOOK (notebookdonorcrud), gtk_notebook_get_nth_page (GTK_NOTEBOOK (notebookdonorcrud), 1), label1580);
+  gtk_label_set_use_markup (GTK_LABEL (label1580), TRUE);
 
   fixed8 = gtk_fixed_new ();
   gtk_widget_show (fixed8);
-  gtk_container_add (GTK_CONTAINER (notebook4), fixed8);
-  gtk_notebook_set_tab_label_packing (GTK_NOTEBOOK (notebook4), fixed8,
+  gtk_container_add (GTK_CONTAINER (notebookdonorcrud), fixed8);
+  gtk_notebook_set_tab_label_packing (GTK_NOTEBOOK (notebookdonorcrud), fixed8,
                                       TRUE, TRUE, GTK_PACK_START);
 
   id_ent_modify = gtk_entry_new ();
@@ -830,27 +870,6 @@ create_appointement (void)
   gtk_fixed_put (GTK_FIXED (fixed8), modif_msg, 504, 456);
   gtk_widget_set_size_request (modif_msg, 472, 65);
 
-  chercher_modif = gtk_button_new ();
-  gtk_widget_show (chercher_modif);
-  gtk_fixed_put (GTK_FIXED (fixed8), chercher_modif, 872, 16);
-  gtk_widget_set_size_request (chercher_modif, 120, 37);
-
-  alignment4 = gtk_alignment_new (0.5, 0.5, 0, 0);
-  gtk_widget_show (alignment4);
-  gtk_container_add (GTK_CONTAINER (chercher_modif), alignment4);
-
-  hbox4 = gtk_hbox_new (FALSE, 2);
-  gtk_widget_show (hbox4);
-  gtk_container_add (GTK_CONTAINER (alignment4), hbox4);
-
-  image20 = gtk_image_new_from_stock ("gtk-find", GTK_ICON_SIZE_BUTTON);
-  gtk_widget_show (image20);
-  gtk_box_pack_start (GTK_BOX (hbox4), image20, FALSE, FALSE, 0);
-
-  label102 = gtk_label_new_with_mnemonic (_("research"));
-  gtk_widget_show (label102);
-  gtk_box_pack_start (GTK_BOX (hbox4), label102, FALSE, FALSE, 0);
-
   chek_modify = gtk_button_new ();
   gtk_widget_show (chek_modify);
   gtk_fixed_put (GTK_FIXED (fixed8), chek_modify, 648, 248);
@@ -924,15 +943,57 @@ create_appointement (void)
   gtk_widget_show (label105);
   gtk_box_pack_start (GTK_BOX (hbox7), label105, FALSE, FALSE, 0);
 
+  Refreshdonorchange = gtk_button_new ();
+  gtk_widget_show (Refreshdonorchange);
+  gtk_fixed_put (GTK_FIXED (fixed8), Refreshdonorchange, 1020, 16);
+  gtk_widget_set_size_request (Refreshdonorchange, 120, 37);
+
+  alignment349 = gtk_alignment_new (0.5, 0.5, 0, 0);
+  gtk_widget_show (alignment349);
+  gtk_container_add (GTK_CONTAINER (Refreshdonorchange), alignment349);
+
+  hbox349 = gtk_hbox_new (FALSE, 2);
+  gtk_widget_show (hbox349);
+  gtk_container_add (GTK_CONTAINER (alignment349), hbox349);
+
+  image380 = gtk_image_new_from_stock ("gtk-clear", GTK_ICON_SIZE_BUTTON);
+  gtk_widget_show (image380);
+  gtk_box_pack_start (GTK_BOX (hbox349), image380, FALSE, FALSE, 0);
+
+  label1579 = gtk_label_new_with_mnemonic (_("Refresh"));
+  gtk_widget_show (label1579);
+  gtk_box_pack_start (GTK_BOX (hbox349), label1579, FALSE, FALSE, 0);
+
+  chercher_modif = gtk_button_new ();
+  gtk_widget_show (chercher_modif);
+  gtk_fixed_put (GTK_FIXED (fixed8), chercher_modif, 872, 16);
+  gtk_widget_set_size_request (chercher_modif, 120, 37);
+
+  alignment4 = gtk_alignment_new (0.5, 0.5, 0, 0);
+  gtk_widget_show (alignment4);
+  gtk_container_add (GTK_CONTAINER (chercher_modif), alignment4);
+
+  hbox4 = gtk_hbox_new (FALSE, 2);
+  gtk_widget_show (hbox4);
+  gtk_container_add (GTK_CONTAINER (alignment4), hbox4);
+
+  image20 = gtk_image_new_from_stock ("gtk-find", GTK_ICON_SIZE_BUTTON);
+  gtk_widget_show (image20);
+  gtk_box_pack_start (GTK_BOX (hbox4), image20, FALSE, FALSE, 0);
+
+  label102 = gtk_label_new_with_mnemonic (_("research"));
+  gtk_widget_show (label102);
+  gtk_box_pack_start (GTK_BOX (hbox4), label102, FALSE, FALSE, 0);
+
   label21 = gtk_label_new (_("<span font_size=\"xx-large\" color=\"#BE3144\" font_family=\"Courier New\"><i><b>CHANGE</b></i></span>"));
   gtk_widget_show (label21);
-  gtk_notebook_set_tab_label (GTK_NOTEBOOK (notebook4), gtk_notebook_get_nth_page (GTK_NOTEBOOK (notebook4), 2), label21);
+  gtk_notebook_set_tab_label (GTK_NOTEBOOK (notebookdonorcrud), gtk_notebook_get_nth_page (GTK_NOTEBOOK (notebookdonorcrud), 2), label21);
   gtk_label_set_use_markup (GTK_LABEL (label21), TRUE);
 
   fixed5 = gtk_fixed_new ();
   gtk_widget_show (fixed5);
-  gtk_container_add (GTK_CONTAINER (notebook4), fixed5);
-  gtk_notebook_set_tab_label_packing (GTK_NOTEBOOK (notebook4), fixed5,
+  gtk_container_add (GTK_CONTAINER (notebookdonorcrud), fixed5);
+  gtk_notebook_set_tab_label_packing (GTK_NOTEBOOK (notebookdonorcrud), fixed5,
                                       TRUE, TRUE, GTK_PACK_START);
 
   id_enter = gtk_entry_new ();
@@ -1033,27 +1094,6 @@ create_appointement (void)
   gtk_widget_set_size_request (label123, 57, 17);
   gtk_label_set_line_wrap (GTK_LABEL (label123), TRUE);
 
-  search_cancel = gtk_button_new ();
-  gtk_widget_show (search_cancel);
-  gtk_fixed_put (GTK_FIXED (fixed5), search_cancel, 872, 48);
-  gtk_widget_set_size_request (search_cancel, 104, 37);
-
-  alignment13 = gtk_alignment_new (0.5, 0.5, 0, 0);
-  gtk_widget_show (alignment13);
-  gtk_container_add (GTK_CONTAINER (search_cancel), alignment13);
-
-  hbox13 = gtk_hbox_new (FALSE, 2);
-  gtk_widget_show (hbox13);
-  gtk_container_add (GTK_CONTAINER (alignment13), hbox13);
-
-  image29 = gtk_image_new_from_stock ("gtk-find", GTK_ICON_SIZE_BUTTON);
-  gtk_widget_show (image29);
-  gtk_box_pack_start (GTK_BOX (hbox13), image29, FALSE, FALSE, 0);
-
-  label115 = gtk_label_new_with_mnemonic (_("reaserch"));
-  gtk_widget_show (label115);
-  gtk_box_pack_start (GTK_BOX (hbox13), label115, FALSE, FALSE, 0);
-
   cancel_ip = gtk_button_new ();
   gtk_widget_show (cancel_ip);
   gtk_fixed_put (GTK_FIXED (fixed5), cancel_ip, 568, 296);
@@ -1096,9 +1136,51 @@ create_appointement (void)
   gtk_widget_show (label106);
   gtk_box_pack_start (GTK_BOX (hbox8), label106, FALSE, FALSE, 0);
 
+  search_cancel = gtk_button_new ();
+  gtk_widget_show (search_cancel);
+  gtk_fixed_put (GTK_FIXED (fixed5), search_cancel, 872, 48);
+  gtk_widget_set_size_request (search_cancel, 104, 37);
+
+  alignment13 = gtk_alignment_new (0.5, 0.5, 0, 0);
+  gtk_widget_show (alignment13);
+  gtk_container_add (GTK_CONTAINER (search_cancel), alignment13);
+
+  hbox13 = gtk_hbox_new (FALSE, 2);
+  gtk_widget_show (hbox13);
+  gtk_container_add (GTK_CONTAINER (alignment13), hbox13);
+
+  image29 = gtk_image_new_from_stock ("gtk-find", GTK_ICON_SIZE_BUTTON);
+  gtk_widget_show (image29);
+  gtk_box_pack_start (GTK_BOX (hbox13), image29, FALSE, FALSE, 0);
+
+  label115 = gtk_label_new_with_mnemonic (_("reaserch"));
+  gtk_widget_show (label115);
+  gtk_box_pack_start (GTK_BOX (hbox13), label115, FALSE, FALSE, 0);
+
+  refreshdonorcancel = gtk_button_new ();
+  gtk_widget_show (refreshdonorcancel);
+  gtk_fixed_put (GTK_FIXED (fixed5), refreshdonorcancel, 1020, 48);
+  gtk_widget_set_size_request (refreshdonorcancel, 120, 37);
+
+  alignment350 = gtk_alignment_new (0.5, 0.5, 0, 0);
+  gtk_widget_show (alignment350);
+  gtk_container_add (GTK_CONTAINER (refreshdonorcancel), alignment350);
+
+  hbox350 = gtk_hbox_new (FALSE, 2);
+  gtk_widget_show (hbox350);
+  gtk_container_add (GTK_CONTAINER (alignment350), hbox350);
+
+  image381 = gtk_image_new_from_stock ("gtk-clear", GTK_ICON_SIZE_BUTTON);
+  gtk_widget_show (image381);
+  gtk_box_pack_start (GTK_BOX (hbox350), image381, FALSE, FALSE, 0);
+
+  label1581 = gtk_label_new_with_mnemonic (_("Refresh"));
+  gtk_widget_show (label1581);
+  gtk_box_pack_start (GTK_BOX (hbox350), label1581, FALSE, FALSE, 0);
+
   label18 = gtk_label_new (_("<span font_size=\"xx-large\" color=\"#BE3144\" font_family=\"Courier New\"><i><b>CANCEL</b></i></span>"));
   gtk_widget_show (label18);
-  gtk_notebook_set_tab_label (GTK_NOTEBOOK (notebook4), gtk_notebook_get_nth_page (GTK_NOTEBOOK (notebook4), 3), label18);
+  gtk_notebook_set_tab_label (GTK_NOTEBOOK (notebookdonorcrud), gtk_notebook_get_nth_page (GTK_NOTEBOOK (notebookdonorcrud), 3), label18);
   gtk_label_set_use_markup (GTK_LABEL (label18), TRUE);
 
   label16 = gtk_label_new (_(" <span font_size=\"xx-large\" color=\"#BE3144\" font_family=\"Courier New\"><i><b>APPOINTEMENT</b></i></span>"));
@@ -1112,12 +1194,6 @@ create_appointement (void)
   gtk_notebook_set_tab_label_packing (GTK_NOTEBOOK (notebook3), fixed9,
                                       TRUE, TRUE, GTK_PACK_START);
 
-  full_name_rdv = gtk_entry_new ();
-  gtk_widget_show (full_name_rdv);
-  gtk_fixed_put (GTK_FIXED (fixed9), full_name_rdv, 616, 24);
-  gtk_widget_set_size_request (full_name_rdv, 160, 27);
-  gtk_entry_set_invisible_char (GTK_ENTRY (full_name_rdv), 8226);
-
   treeviewhisto = gtk_tree_view_new ();
   gtk_widget_show (treeviewhisto);
   gtk_fixed_put (GTK_FIXED (fixed9), treeviewhisto, 280, 264);
@@ -1127,32 +1203,6 @@ create_appointement (void)
   gtk_widget_show (donor_id__history);
   gtk_fixed_put (GTK_FIXED (fixed9), donor_id__history, 728, 24);
   gtk_widget_set_size_request (donor_id__history, 192, 25);
-
-  label98 = gtk_label_new (_("CIN:"));
-  gtk_widget_show (label98);
-  gtk_fixed_put (GTK_FIXED (fixed9), label98, 496, 24);
-  gtk_widget_set_size_request (label98, 105, 25);
-
-  show_history = gtk_button_new ();
-  gtk_widget_show (show_history);
-  gtk_fixed_put (GTK_FIXED (fixed9), show_history, 576, 160);
-  gtk_widget_set_size_request (show_history, 152, 48);
-
-  alignment11 = gtk_alignment_new (0.5, 0.5, 0, 0);
-  gtk_widget_show (alignment11);
-  gtk_container_add (GTK_CONTAINER (show_history), alignment11);
-
-  hbox11 = gtk_hbox_new (FALSE, 2);
-  gtk_widget_show (hbox11);
-  gtk_container_add (GTK_CONTAINER (alignment11), hbox11);
-
-  image27 = gtk_image_new_from_stock ("gtk-open", GTK_ICON_SIZE_BUTTON);
-  gtk_widget_show (image27);
-  gtk_box_pack_start (GTK_BOX (hbox11), image27, FALSE, FALSE, 0);
-
-  label112 = gtk_label_new_with_mnemonic (_("SHOW HISTORY"));
-  gtk_widget_show (label112);
-  gtk_box_pack_start (GTK_BOX (hbox11), label112, FALSE, FALSE, 0);
 
   log_out_history_rdv = gtk_button_new ();
   gtk_widget_show (log_out_history_rdv);
@@ -1180,6 +1230,27 @@ create_appointement (void)
   gtk_fixed_put (GTK_FIXED (fixed9), image361, 896, 16);
   gtk_widget_set_size_request (image361, 264, 256);
 
+  show_history = gtk_button_new ();
+  gtk_widget_show (show_history);
+  gtk_fixed_put (GTK_FIXED (fixed9), show_history, 576, 160);
+  gtk_widget_set_size_request (show_history, 152, 48);
+
+  alignment11 = gtk_alignment_new (0.5, 0.5, 0, 0);
+  gtk_widget_show (alignment11);
+  gtk_container_add (GTK_CONTAINER (show_history), alignment11);
+
+  hbox11 = gtk_hbox_new (FALSE, 2);
+  gtk_widget_show (hbox11);
+  gtk_container_add (GTK_CONTAINER (alignment11), hbox11);
+
+  image27 = gtk_image_new_from_stock ("gtk-open", GTK_ICON_SIZE_BUTTON);
+  gtk_widget_show (image27);
+  gtk_box_pack_start (GTK_BOX (hbox11), image27, FALSE, FALSE, 0);
+
+  label112 = gtk_label_new_with_mnemonic (_("SHOW HISTORY"));
+  gtk_widget_show (label112);
+  gtk_box_pack_start (GTK_BOX (hbox11), label112, FALSE, FALSE, 0);
+
   label17 = gtk_label_new (_(" <span font_size=\"xx-large\" color=\"#BE3144\" font_family=\"Courier New\"><i><b>MY HISTORY</b></i></span>"));
   gtk_widget_show (label17);
   gtk_notebook_set_tab_label (GTK_NOTEBOOK (notebook3), gtk_notebook_get_nth_page (GTK_NOTEBOOK (notebook3), 1), label17);
@@ -1196,26 +1267,26 @@ create_appointement (void)
   g_signal_connect ((gpointer) radiordv2, "toggled",
                     G_CALLBACK (on_radiordv2_toggled),
                     NULL);
-  g_signal_connect ((gpointer) book, "clicked",
-                    G_CALLBACK (on_book_clicked),
-                    NULL);
   g_signal_connect ((gpointer) check_avail_time, "clicked",
                     G_CALLBACK (on_check_avail_time_clicked),
                     NULL);
   g_signal_connect ((gpointer) log_out_book_rdv, "clicked",
                     G_CALLBACK (on_log_out_book_rdv_clicked),
                     NULL);
+  g_signal_connect ((gpointer) book, "clicked",
+                    G_CALLBACK (on_book_clicked),
+                    NULL);
+  g_signal_connect ((gpointer) Refreshdonorbook, "clicked",
+                    G_CALLBACK (on_Refreshdonorbook_clicked),
+                    NULL);
   g_signal_connect ((gpointer) treeviewshow1, "row_activated",
                     G_CALLBACK (on_treeviewshow1_row_activated),
-                    NULL);
-  g_signal_connect ((gpointer) show_rdv, "clicked",
-                    G_CALLBACK (on_show_rdv_clicked),
                     NULL);
   g_signal_connect ((gpointer) log_out_show_rdv, "clicked",
                     G_CALLBACK (on_log_out_show_rdv_clicked),
                     NULL);
-  g_signal_connect ((gpointer) chercher_modif, "clicked",
-                    G_CALLBACK (on_chercher_modif_clicked),
+  g_signal_connect ((gpointer) show_rdv, "clicked",
+                    G_CALLBACK (on_show_rdv_clicked),
                     NULL);
   g_signal_connect ((gpointer) chek_modify, "clicked",
                     G_CALLBACK (on_chek_modify_clicked),
@@ -1226,14 +1297,17 @@ create_appointement (void)
   g_signal_connect ((gpointer) log_out_modify_rdv, "clicked",
                     G_CALLBACK (on_log_out_modify_rdv_clicked),
                     NULL);
+  g_signal_connect ((gpointer) Refreshdonorchange, "clicked",
+                    G_CALLBACK (on_Refreshdonorchange_clicked),
+                    NULL);
+  g_signal_connect ((gpointer) chercher_modif, "clicked",
+                    G_CALLBACK (on_chercher_modif_clicked),
+                    NULL);
   g_signal_connect ((gpointer) cancel_chek2, "toggled",
                     G_CALLBACK (on_cancel_chek2_toggled),
                     NULL);
   g_signal_connect ((gpointer) cancel_chek1, "toggled",
                     G_CALLBACK (on_sure_toggled),
-                    NULL);
-  g_signal_connect ((gpointer) search_cancel, "clicked",
-                    G_CALLBACK (on_search_cancel_clicked),
                     NULL);
   g_signal_connect ((gpointer) cancel_ip, "clicked",
                     G_CALLBACK (on_cancel_ip_clicked),
@@ -1241,21 +1315,27 @@ create_appointement (void)
   g_signal_connect ((gpointer) log_out_cancel_rdv, "clicked",
                     G_CALLBACK (on_log_out_cancel_rdv_clicked),
                     NULL);
+  g_signal_connect ((gpointer) search_cancel, "clicked",
+                    G_CALLBACK (on_search_cancel_clicked),
+                    NULL);
+  g_signal_connect ((gpointer) refreshdonorcancel, "clicked",
+                    G_CALLBACK (on_refreshdonorcancel_clicked),
+                    NULL);
   g_signal_connect ((gpointer) treeviewhisto, "row_activated",
                     G_CALLBACK (on_treeviewhisto_row_activated),
                     NULL);
-  g_signal_connect ((gpointer) show_history, "clicked",
-                    G_CALLBACK (on_show_history_clicked),
-                    NULL);
   g_signal_connect ((gpointer) log_out_history_rdv, "clicked",
                     G_CALLBACK (on_log_out_history_rdv_clicked),
+                    NULL);
+  g_signal_connect ((gpointer) show_history, "clicked",
+                    G_CALLBACK (on_show_history_clicked),
                     NULL);
 
   /* Store pointers to all widgets, for use by lookup_widget(). */
   GLADE_HOOKUP_OBJECT_NO_REF (appointement, appointement, "appointement");
   GLADE_HOOKUP_OBJECT (appointement, notebook2, "notebook2");
   GLADE_HOOKUP_OBJECT (appointement, notebook3, "notebook3");
-  GLADE_HOOKUP_OBJECT (appointement, notebook4, "notebook4");
+  GLADE_HOOKUP_OBJECT (appointement, notebookdonorcrud, "notebookdonorcrud");
   GLADE_HOOKUP_OBJECT (appointement, fixed6, "fixed6");
   GLADE_HOOKUP_OBJECT (appointement, add_day, "add_day");
   GLADE_HOOKUP_OBJECT (appointement, add_month, "add_month");
@@ -1267,15 +1347,8 @@ create_appointement (void)
   GLADE_HOOKUP_OBJECT (appointement, add_estab, "add_estab");
   GLADE_HOOKUP_OBJECT (appointement, radiordv1, "radiordv1");
   GLADE_HOOKUP_OBJECT (appointement, radiordv2, "radiordv2");
-  GLADE_HOOKUP_OBJECT (appointement, outmsgjj, "outmsgjj");
-  GLADE_HOOKUP_OBJECT (appointement, book, "book");
-  GLADE_HOOKUP_OBJECT (appointement, alignment14, "alignment14");
-  GLADE_HOOKUP_OBJECT (appointement, hbox14, "hbox14");
-  GLADE_HOOKUP_OBJECT (appointement, image30, "image30");
-  GLADE_HOOKUP_OBJECT (appointement, label116, "label116");
   GLADE_HOOKUP_OBJECT (appointement, check_avail_time, "check_avail_time");
   GLADE_HOOKUP_OBJECT (appointement, label26, "label26");
-  GLADE_HOOKUP_OBJECT (appointement, msg_ajout, "msg_ajout");
   GLADE_HOOKUP_OBJECT (appointement, label114, "label114");
   GLADE_HOOKUP_OBJECT (appointement, image373, "image373");
   GLADE_HOOKUP_OBJECT (appointement, log_out_book_rdv, "log_out_book_rdv");
@@ -1283,20 +1356,32 @@ create_appointement (void)
   GLADE_HOOKUP_OBJECT (appointement, hbox1, "hbox1");
   GLADE_HOOKUP_OBJECT (appointement, image17, "image17");
   GLADE_HOOKUP_OBJECT (appointement, label99, "label99");
+  GLADE_HOOKUP_OBJECT (appointement, outmsgjj, "outmsgjj");
+  GLADE_HOOKUP_OBJECT (appointement, msg_ajout, "msg_ajout");
+  GLADE_HOOKUP_OBJECT (appointement, book, "book");
+  GLADE_HOOKUP_OBJECT (appointement, alignment14, "alignment14");
+  GLADE_HOOKUP_OBJECT (appointement, hbox14, "hbox14");
+  GLADE_HOOKUP_OBJECT (appointement, image30, "image30");
+  GLADE_HOOKUP_OBJECT (appointement, label116, "label116");
+  GLADE_HOOKUP_OBJECT (appointement, Refreshdonorbook, "Refreshdonorbook");
+  GLADE_HOOKUP_OBJECT (appointement, alignment351, "alignment351");
+  GLADE_HOOKUP_OBJECT (appointement, hbox351, "hbox351");
+  GLADE_HOOKUP_OBJECT (appointement, image382, "image382");
+  GLADE_HOOKUP_OBJECT (appointement, label1582, "label1582");
   GLADE_HOOKUP_OBJECT (appointement, label19, "label19");
   GLADE_HOOKUP_OBJECT (appointement, fixed7, "fixed7");
   GLADE_HOOKUP_OBJECT (appointement, treeviewshow1, "treeviewshow1");
-  GLADE_HOOKUP_OBJECT (appointement, show_rdv, "show_rdv");
-  GLADE_HOOKUP_OBJECT (appointement, alignment2, "alignment2");
-  GLADE_HOOKUP_OBJECT (appointement, hbox2, "hbox2");
-  GLADE_HOOKUP_OBJECT (appointement, image18, "image18");
-  GLADE_HOOKUP_OBJECT (appointement, label100, "label100");
   GLADE_HOOKUP_OBJECT (appointement, log_out_show_rdv, "log_out_show_rdv");
   GLADE_HOOKUP_OBJECT (appointement, alignment3, "alignment3");
   GLADE_HOOKUP_OBJECT (appointement, hbox3, "hbox3");
   GLADE_HOOKUP_OBJECT (appointement, image19, "image19");
   GLADE_HOOKUP_OBJECT (appointement, label101, "label101");
-  GLADE_HOOKUP_OBJECT (appointement, qkdjdq, "qkdjdq");
+  GLADE_HOOKUP_OBJECT (appointement, show_rdv, "show_rdv");
+  GLADE_HOOKUP_OBJECT (appointement, alignment2, "alignment2");
+  GLADE_HOOKUP_OBJECT (appointement, hbox2, "hbox2");
+  GLADE_HOOKUP_OBJECT (appointement, image18, "image18");
+  GLADE_HOOKUP_OBJECT (appointement, label100, "label100");
+  GLADE_HOOKUP_OBJECT (appointement, label1580, "label1580");
   GLADE_HOOKUP_OBJECT (appointement, fixed8, "fixed8");
   GLADE_HOOKUP_OBJECT (appointement, id_ent_modify, "id_ent_modify");
   GLADE_HOOKUP_OBJECT (appointement, label38, "label38");
@@ -1322,11 +1407,6 @@ create_appointement (void)
   GLADE_HOOKUP_OBJECT (appointement, iddmodd, "iddmodd");
   GLADE_HOOKUP_OBJECT (appointement, est_modify, "est_modify");
   GLADE_HOOKUP_OBJECT (appointement, modif_msg, "modif_msg");
-  GLADE_HOOKUP_OBJECT (appointement, chercher_modif, "chercher_modif");
-  GLADE_HOOKUP_OBJECT (appointement, alignment4, "alignment4");
-  GLADE_HOOKUP_OBJECT (appointement, hbox4, "hbox4");
-  GLADE_HOOKUP_OBJECT (appointement, image20, "image20");
-  GLADE_HOOKUP_OBJECT (appointement, label102, "label102");
   GLADE_HOOKUP_OBJECT (appointement, chek_modify, "chek_modify");
   GLADE_HOOKUP_OBJECT (appointement, alignment5, "alignment5");
   GLADE_HOOKUP_OBJECT (appointement, hbox5, "hbox5");
@@ -1344,6 +1424,16 @@ create_appointement (void)
   GLADE_HOOKUP_OBJECT (appointement, hbox7, "hbox7");
   GLADE_HOOKUP_OBJECT (appointement, image23, "image23");
   GLADE_HOOKUP_OBJECT (appointement, label105, "label105");
+  GLADE_HOOKUP_OBJECT (appointement, Refreshdonorchange, "Refreshdonorchange");
+  GLADE_HOOKUP_OBJECT (appointement, alignment349, "alignment349");
+  GLADE_HOOKUP_OBJECT (appointement, hbox349, "hbox349");
+  GLADE_HOOKUP_OBJECT (appointement, image380, "image380");
+  GLADE_HOOKUP_OBJECT (appointement, label1579, "label1579");
+  GLADE_HOOKUP_OBJECT (appointement, chercher_modif, "chercher_modif");
+  GLADE_HOOKUP_OBJECT (appointement, alignment4, "alignment4");
+  GLADE_HOOKUP_OBJECT (appointement, hbox4, "hbox4");
+  GLADE_HOOKUP_OBJECT (appointement, image20, "image20");
+  GLADE_HOOKUP_OBJECT (appointement, label102, "label102");
   GLADE_HOOKUP_OBJECT (appointement, label21, "label21");
   GLADE_HOOKUP_OBJECT (appointement, fixed5, "fixed5");
   GLADE_HOOKUP_OBJECT (appointement, id_enter, "id_enter");
@@ -1365,11 +1455,6 @@ create_appointement (void)
   GLADE_HOOKUP_OBJECT (appointement, sorhori, "sorhori");
   GLADE_HOOKUP_OBJECT (appointement, rcancelmsg, "rcancelmsg");
   GLADE_HOOKUP_OBJECT (appointement, label123, "label123");
-  GLADE_HOOKUP_OBJECT (appointement, search_cancel, "search_cancel");
-  GLADE_HOOKUP_OBJECT (appointement, alignment13, "alignment13");
-  GLADE_HOOKUP_OBJECT (appointement, hbox13, "hbox13");
-  GLADE_HOOKUP_OBJECT (appointement, image29, "image29");
-  GLADE_HOOKUP_OBJECT (appointement, label115, "label115");
   GLADE_HOOKUP_OBJECT (appointement, cancel_ip, "cancel_ip");
   GLADE_HOOKUP_OBJECT (appointement, alignment9, "alignment9");
   GLADE_HOOKUP_OBJECT (appointement, hbox9, "hbox9");
@@ -1380,24 +1465,32 @@ create_appointement (void)
   GLADE_HOOKUP_OBJECT (appointement, hbox8, "hbox8");
   GLADE_HOOKUP_OBJECT (appointement, image24, "image24");
   GLADE_HOOKUP_OBJECT (appointement, label106, "label106");
+  GLADE_HOOKUP_OBJECT (appointement, search_cancel, "search_cancel");
+  GLADE_HOOKUP_OBJECT (appointement, alignment13, "alignment13");
+  GLADE_HOOKUP_OBJECT (appointement, hbox13, "hbox13");
+  GLADE_HOOKUP_OBJECT (appointement, image29, "image29");
+  GLADE_HOOKUP_OBJECT (appointement, label115, "label115");
+  GLADE_HOOKUP_OBJECT (appointement, refreshdonorcancel, "refreshdonorcancel");
+  GLADE_HOOKUP_OBJECT (appointement, alignment350, "alignment350");
+  GLADE_HOOKUP_OBJECT (appointement, hbox350, "hbox350");
+  GLADE_HOOKUP_OBJECT (appointement, image381, "image381");
+  GLADE_HOOKUP_OBJECT (appointement, label1581, "label1581");
   GLADE_HOOKUP_OBJECT (appointement, label18, "label18");
   GLADE_HOOKUP_OBJECT (appointement, label16, "label16");
   GLADE_HOOKUP_OBJECT (appointement, fixed9, "fixed9");
-  GLADE_HOOKUP_OBJECT (appointement, full_name_rdv, "full_name_rdv");
   GLADE_HOOKUP_OBJECT (appointement, treeviewhisto, "treeviewhisto");
   GLADE_HOOKUP_OBJECT (appointement, donor_id__history, "donor_id__history");
-  GLADE_HOOKUP_OBJECT (appointement, label98, "label98");
-  GLADE_HOOKUP_OBJECT (appointement, show_history, "show_history");
-  GLADE_HOOKUP_OBJECT (appointement, alignment11, "alignment11");
-  GLADE_HOOKUP_OBJECT (appointement, hbox11, "hbox11");
-  GLADE_HOOKUP_OBJECT (appointement, image27, "image27");
-  GLADE_HOOKUP_OBJECT (appointement, label112, "label112");
   GLADE_HOOKUP_OBJECT (appointement, log_out_history_rdv, "log_out_history_rdv");
   GLADE_HOOKUP_OBJECT (appointement, alignment10, "alignment10");
   GLADE_HOOKUP_OBJECT (appointement, hbox10, "hbox10");
   GLADE_HOOKUP_OBJECT (appointement, image26, "image26");
   GLADE_HOOKUP_OBJECT (appointement, label111, "label111");
   GLADE_HOOKUP_OBJECT (appointement, image361, "image361");
+  GLADE_HOOKUP_OBJECT (appointement, show_history, "show_history");
+  GLADE_HOOKUP_OBJECT (appointement, alignment11, "alignment11");
+  GLADE_HOOKUP_OBJECT (appointement, hbox11, "hbox11");
+  GLADE_HOOKUP_OBJECT (appointement, image27, "image27");
+  GLADE_HOOKUP_OBJECT (appointement, label112, "label112");
   GLADE_HOOKUP_OBJECT (appointement, label17, "label17");
   GLADE_HOOKUP_OBJECT (appointement, label15, "label15");
 
@@ -1410,7 +1503,7 @@ create_admin (void)
   GtkWidget *admin;
   GtkWidget *notebook5;
   GtkWidget *notebookadminuser;
-  GtkWidget *crud;
+  GtkWidget *notebookcrudusers;
   GtkWidget *create_fix_users;
   GtkWidget *entrylastnameusers;
   GtkWidget *entrynameusers;
@@ -1454,15 +1547,20 @@ create_admin (void)
   GtkWidget *image2;
   GtkWidget *label75;
   GtkWidget *succofcreateusers;
+  GtkWidget *image364;
+  GtkWidget *dateofentryusers;
+  GtkWidget *yearofenrtyusers;
+  GtkWidget *comboboxroleusers;
   GtkWidget *buttonlogoutCusers;
   GtkWidget *alignment8;
   GtkWidget *hbox8;
   GtkWidget *image9;
   GtkWidget *label83;
-  GtkWidget *image364;
-  GtkWidget *dateofentryusers;
-  GtkWidget *yearofenrtyusers;
-  GtkWidget *comboboxroleusers;
+  GtkWidget *refreshusercreate;
+  GtkWidget *alignment352;
+  GtkWidget *hbox352;
+  GtkWidget *image383;
+  GtkWidget *label1583;
   GtkWidget *create_users;
   GtkWidget *read_fix_users;
   GtkWidget *treeviewreadusers;
@@ -1542,6 +1640,11 @@ create_admin (void)
   GtkWidget *label87;
   GtkWidget *image375;
   GtkWidget *comboboxuproleusers;
+  GtkWidget *refreshuserupdate;
+  GtkWidget *alignment354;
+  GtkWidget *hbox354;
+  GtkWidget *image385;
+  GtkWidget *label1585;
   GtkWidget *update_users;
   GtkWidget *fixed40;
   GtkWidget *entryIDdlusers;
@@ -1586,6 +1689,11 @@ create_admin (void)
   GtkWidget *image341;
   GtkWidget *label133;
   GtkWidget *image376;
+  GtkWidget *refreshuserdelete;
+  GtkWidget *alignment353;
+  GtkWidget *hbox353;
+  GtkWidget *image384;
+  GtkWidget *label1584;
   GtkWidget *delete_users;
   GtkWidget *fixed31;
   GtkWidget *treeviewroleusers;
@@ -1611,7 +1719,7 @@ create_admin (void)
   GtkWidget *stat_users;
   GtkWidget *user;
   GtkWidget *notebook7;
-  GtkWidget *notebook3;
+  GtkWidget *notebookcrudets;
   GtkWidget *fixed9;
   GtkWidget *adress_entry;
   GtkWidget *capacity_entry;
@@ -1656,6 +1764,11 @@ create_admin (void)
   GtkWidget *hbox18;
   GtkWidget *image19;
   GtkWidget *label93;
+  GtkWidget *refreshetscreate;
+  GtkWidget *alignment355;
+  GtkWidget *hbox355;
+  GtkWidget *image386;
+  GtkWidget *label1586;
   GtkWidget *create_label_amin;
   GtkWidget *fixed32;
   GtkWidget *treeview4;
@@ -1738,6 +1851,11 @@ create_admin (void)
   GtkWidget *hbox23;
   GtkWidget *image24;
   GtkWidget *label98;
+  GtkWidget *refreshetsupdate;
+  GtkWidget *alignment356;
+  GtkWidget *hbox356;
+  GtkWidget *image387;
+  GtkWidget *label1587;
   GtkWidget *update_label_amin;
   GtkWidget *fixed36;
   GtkWidget *entry24;
@@ -1775,6 +1893,11 @@ create_admin (void)
   GtkWidget *hbox24;
   GtkWidget *image25;
   GtkWidget *label99;
+  GtkWidget *refreshetsdelete;
+  GtkWidget *alignment357;
+  GtkWidget *hbox357;
+  GtkWidget *image388;
+  GtkWidget *label1588;
   GtkWidget *delete_label_amin;
   GtkWidget *labeladminetscrud;
   GtkWidget *notebook8;
@@ -1832,16 +1955,16 @@ create_admin (void)
   gtk_notebook_set_tab_label_packing (GTK_NOTEBOOK (notebook5), notebookadminuser,
                                       TRUE, TRUE, GTK_PACK_START);
 
-  crud = gtk_notebook_new ();
-  gtk_widget_show (crud);
-  gtk_container_add (GTK_CONTAINER (notebookadminuser), crud);
-  gtk_notebook_set_tab_label_packing (GTK_NOTEBOOK (notebookadminuser), crud,
+  notebookcrudusers = gtk_notebook_new ();
+  gtk_widget_show (notebookcrudusers);
+  gtk_container_add (GTK_CONTAINER (notebookadminuser), notebookcrudusers);
+  gtk_notebook_set_tab_label_packing (GTK_NOTEBOOK (notebookadminuser), notebookcrudusers,
                                       TRUE, TRUE, GTK_PACK_START);
 
   create_fix_users = gtk_fixed_new ();
   gtk_widget_show (create_fix_users);
-  gtk_container_add (GTK_CONTAINER (crud), create_fix_users);
-  gtk_notebook_set_tab_label_packing (GTK_NOTEBOOK (crud), create_fix_users,
+  gtk_container_add (GTK_CONTAINER (notebookcrudusers), create_fix_users);
+  gtk_notebook_set_tab_label_packing (GTK_NOTEBOOK (notebookcrudusers), create_fix_users,
                                       TRUE, TRUE, GTK_PACK_START);
 
   entrylastnameusers = gtk_entry_new ();
@@ -2043,27 +2166,6 @@ create_admin (void)
   gtk_fixed_put (GTK_FIXED (create_fix_users), succofcreateusers, 96, 568);
   gtk_widget_set_size_request (succofcreateusers, 700, 30);
 
-  buttonlogoutCusers = gtk_button_new ();
-  gtk_widget_show (buttonlogoutCusers);
-  gtk_fixed_put (GTK_FIXED (create_fix_users), buttonlogoutCusers, 1250, 60);
-  gtk_widget_set_size_request (buttonlogoutCusers, 120, 40);
-
-  alignment8 = gtk_alignment_new (0.5, 0.5, 0, 0);
-  gtk_widget_show (alignment8);
-  gtk_container_add (GTK_CONTAINER (buttonlogoutCusers), alignment8);
-
-  hbox8 = gtk_hbox_new (FALSE, 2);
-  gtk_widget_show (hbox8);
-  gtk_container_add (GTK_CONTAINER (alignment8), hbox8);
-
-  image9 = gtk_image_new_from_stock ("gtk-quit", GTK_ICON_SIZE_BUTTON);
-  gtk_widget_show (image9);
-  gtk_box_pack_start (GTK_BOX (hbox8), image9, FALSE, FALSE, 0);
-
-  label83 = gtk_label_new_with_mnemonic (_("logout"));
-  gtk_widget_show (label83);
-  gtk_box_pack_start (GTK_BOX (hbox8), label83, FALSE, FALSE, 0);
-
   image364 = create_pixmap (admin, "yahya.jpg");
   gtk_widget_show (image364);
   gtk_fixed_put (GTK_FIXED (create_fix_users), image364, 1288, 144);
@@ -2088,15 +2190,57 @@ create_admin (void)
   gtk_combo_box_append_text (GTK_COMBO_BOX (comboboxroleusers), _("Nurse"));
   gtk_combo_box_append_text (GTK_COMBO_BOX (comboboxroleusers), _("Director"));
 
+  buttonlogoutCusers = gtk_button_new ();
+  gtk_widget_show (buttonlogoutCusers);
+  gtk_fixed_put (GTK_FIXED (create_fix_users), buttonlogoutCusers, 1250, 60);
+  gtk_widget_set_size_request (buttonlogoutCusers, 120, 40);
+
+  alignment8 = gtk_alignment_new (0.5, 0.5, 0, 0);
+  gtk_widget_show (alignment8);
+  gtk_container_add (GTK_CONTAINER (buttonlogoutCusers), alignment8);
+
+  hbox8 = gtk_hbox_new (FALSE, 2);
+  gtk_widget_show (hbox8);
+  gtk_container_add (GTK_CONTAINER (alignment8), hbox8);
+
+  image9 = gtk_image_new_from_stock ("gtk-quit", GTK_ICON_SIZE_BUTTON);
+  gtk_widget_show (image9);
+  gtk_box_pack_start (GTK_BOX (hbox8), image9, FALSE, FALSE, 0);
+
+  label83 = gtk_label_new_with_mnemonic (_("logout"));
+  gtk_widget_show (label83);
+  gtk_box_pack_start (GTK_BOX (hbox8), label83, FALSE, FALSE, 0);
+
+  refreshusercreate = gtk_button_new ();
+  gtk_widget_show (refreshusercreate);
+  gtk_fixed_put (GTK_FIXED (create_fix_users), refreshusercreate, 1400, 60);
+  gtk_widget_set_size_request (refreshusercreate, 120, 40);
+
+  alignment352 = gtk_alignment_new (0.5, 0.5, 0, 0);
+  gtk_widget_show (alignment352);
+  gtk_container_add (GTK_CONTAINER (refreshusercreate), alignment352);
+
+  hbox352 = gtk_hbox_new (FALSE, 2);
+  gtk_widget_show (hbox352);
+  gtk_container_add (GTK_CONTAINER (alignment352), hbox352);
+
+  image383 = gtk_image_new_from_stock ("gtk-clear", GTK_ICON_SIZE_BUTTON);
+  gtk_widget_show (image383);
+  gtk_box_pack_start (GTK_BOX (hbox352), image383, FALSE, FALSE, 0);
+
+  label1583 = gtk_label_new_with_mnemonic (_("Refresh"));
+  gtk_widget_show (label1583);
+  gtk_box_pack_start (GTK_BOX (hbox352), label1583, FALSE, FALSE, 0);
+
   create_users = gtk_label_new (_(" <span font_size=\"xx-large\" color=\"#BE3144\" font_family=\"Courier New\"><i><b>CREATE</b></i></span>"));
   gtk_widget_show (create_users);
-  gtk_notebook_set_tab_label (GTK_NOTEBOOK (crud), gtk_notebook_get_nth_page (GTK_NOTEBOOK (crud), 0), create_users);
+  gtk_notebook_set_tab_label (GTK_NOTEBOOK (notebookcrudusers), gtk_notebook_get_nth_page (GTK_NOTEBOOK (notebookcrudusers), 0), create_users);
   gtk_label_set_use_markup (GTK_LABEL (create_users), TRUE);
 
   read_fix_users = gtk_fixed_new ();
   gtk_widget_show (read_fix_users);
-  gtk_container_add (GTK_CONTAINER (crud), read_fix_users);
-  gtk_notebook_set_tab_label_packing (GTK_NOTEBOOK (crud), read_fix_users,
+  gtk_container_add (GTK_CONTAINER (notebookcrudusers), read_fix_users);
+  gtk_notebook_set_tab_label_packing (GTK_NOTEBOOK (notebookcrudusers), read_fix_users,
                                       TRUE, TRUE, GTK_PACK_START);
 
   treeviewreadusers = gtk_tree_view_new ();
@@ -2153,13 +2297,13 @@ create_admin (void)
 
   read_users = gtk_label_new (_(" <span font_size=\"xx-large\" color=\"#BE3144\" font_family=\"Courier New\"><i><b>READ</b></i></span>"));
   gtk_widget_show (read_users);
-  gtk_notebook_set_tab_label (GTK_NOTEBOOK (crud), gtk_notebook_get_nth_page (GTK_NOTEBOOK (crud), 1), read_users);
+  gtk_notebook_set_tab_label (GTK_NOTEBOOK (notebookcrudusers), gtk_notebook_get_nth_page (GTK_NOTEBOOK (notebookcrudusers), 1), read_users);
   gtk_label_set_use_markup (GTK_LABEL (read_users), TRUE);
 
   update_fix_users = gtk_fixed_new ();
   gtk_widget_show (update_fix_users);
-  gtk_container_add (GTK_CONTAINER (crud), update_fix_users);
-  gtk_notebook_set_tab_label_packing (GTK_NOTEBOOK (crud), update_fix_users,
+  gtk_container_add (GTK_CONTAINER (notebookcrudusers), update_fix_users);
+  gtk_notebook_set_tab_label_packing (GTK_NOTEBOOK (notebookcrudusers), update_fix_users,
                                       TRUE, TRUE, GTK_PACK_START);
 
   entryIDupusers = gtk_entry_new ();
@@ -2475,16 +2619,37 @@ create_admin (void)
   gtk_combo_box_append_text (GTK_COMBO_BOX (comboboxuproleusers), _("Nurse"));
   gtk_combo_box_append_text (GTK_COMBO_BOX (comboboxuproleusers), _("Director"));
 
+  refreshuserupdate = gtk_button_new ();
+  gtk_widget_show (refreshuserupdate);
+  gtk_fixed_put (GTK_FIXED (update_fix_users), refreshuserupdate, 1400, 60);
+  gtk_widget_set_size_request (refreshuserupdate, 120, 40);
+
+  alignment354 = gtk_alignment_new (0.5, 0.5, 0, 0);
+  gtk_widget_show (alignment354);
+  gtk_container_add (GTK_CONTAINER (refreshuserupdate), alignment354);
+
+  hbox354 = gtk_hbox_new (FALSE, 2);
+  gtk_widget_show (hbox354);
+  gtk_container_add (GTK_CONTAINER (alignment354), hbox354);
+
+  image385 = gtk_image_new_from_stock ("gtk-clear", GTK_ICON_SIZE_BUTTON);
+  gtk_widget_show (image385);
+  gtk_box_pack_start (GTK_BOX (hbox354), image385, FALSE, FALSE, 0);
+
+  label1585 = gtk_label_new_with_mnemonic (_("Refresh"));
+  gtk_widget_show (label1585);
+  gtk_box_pack_start (GTK_BOX (hbox354), label1585, FALSE, FALSE, 0);
+
   update_users = gtk_label_new (_(" <span font_size=\"xx-large\" color=\"#BE3144\" font_family=\"Courier New\"><i><b>UPDATE</b></i></span>"));
   gtk_widget_show (update_users);
-  gtk_notebook_set_tab_label (GTK_NOTEBOOK (crud), gtk_notebook_get_nth_page (GTK_NOTEBOOK (crud), 2), update_users);
+  gtk_notebook_set_tab_label (GTK_NOTEBOOK (notebookcrudusers), gtk_notebook_get_nth_page (GTK_NOTEBOOK (notebookcrudusers), 2), update_users);
   gtk_widget_set_size_request (update_users, 49, 17);
   gtk_label_set_use_markup (GTK_LABEL (update_users), TRUE);
 
   fixed40 = gtk_fixed_new ();
   gtk_widget_show (fixed40);
-  gtk_container_add (GTK_CONTAINER (crud), fixed40);
-  gtk_notebook_set_tab_label_packing (GTK_NOTEBOOK (crud), fixed40,
+  gtk_container_add (GTK_CONTAINER (notebookcrudusers), fixed40);
+  gtk_notebook_set_tab_label_packing (GTK_NOTEBOOK (notebookcrudusers), fixed40,
                                       TRUE, TRUE, GTK_PACK_START);
 
   entryIDdlusers = gtk_entry_new ();
@@ -2699,15 +2864,36 @@ create_admin (void)
   gtk_fixed_put (GTK_FIXED (fixed40), image376, 1288, 144);
   gtk_widget_set_size_request (image376, 304, 272);
 
+  refreshuserdelete = gtk_button_new ();
+  gtk_widget_show (refreshuserdelete);
+  gtk_fixed_put (GTK_FIXED (fixed40), refreshuserdelete, 1400, 60);
+  gtk_widget_set_size_request (refreshuserdelete, 120, 40);
+
+  alignment353 = gtk_alignment_new (0.5, 0.5, 0, 0);
+  gtk_widget_show (alignment353);
+  gtk_container_add (GTK_CONTAINER (refreshuserdelete), alignment353);
+
+  hbox353 = gtk_hbox_new (FALSE, 2);
+  gtk_widget_show (hbox353);
+  gtk_container_add (GTK_CONTAINER (alignment353), hbox353);
+
+  image384 = gtk_image_new_from_stock ("gtk-clear", GTK_ICON_SIZE_BUTTON);
+  gtk_widget_show (image384);
+  gtk_box_pack_start (GTK_BOX (hbox353), image384, FALSE, FALSE, 0);
+
+  label1584 = gtk_label_new_with_mnemonic (_("Refresh"));
+  gtk_widget_show (label1584);
+  gtk_box_pack_start (GTK_BOX (hbox353), label1584, FALSE, FALSE, 0);
+
   delete_users = gtk_label_new (_(" <span font_size=\"xx-large\" color=\"#BE3144\" font_family=\"Courier New\"><i><b>DELETE</b></i></span>"));
   gtk_widget_show (delete_users);
-  gtk_notebook_set_tab_label (GTK_NOTEBOOK (crud), gtk_notebook_get_nth_page (GTK_NOTEBOOK (crud), 3), delete_users);
+  gtk_notebook_set_tab_label (GTK_NOTEBOOK (notebookcrudusers), gtk_notebook_get_nth_page (GTK_NOTEBOOK (notebookcrudusers), 3), delete_users);
   gtk_label_set_use_markup (GTK_LABEL (delete_users), TRUE);
 
   fixed31 = gtk_fixed_new ();
   gtk_widget_show (fixed31);
-  gtk_container_add (GTK_CONTAINER (crud), fixed31);
-  gtk_notebook_set_tab_label_packing (GTK_NOTEBOOK (crud), fixed31,
+  gtk_container_add (GTK_CONTAINER (notebookcrudusers), fixed31);
+  gtk_notebook_set_tab_label_packing (GTK_NOTEBOOK (notebookcrudusers), fixed31,
                                       TRUE, TRUE, GTK_PACK_START);
 
   treeviewroleusers = gtk_tree_view_new ();
@@ -2810,7 +2996,7 @@ create_admin (void)
 
   stat_users = gtk_label_new (_(" <span font_size=\"xx-large\" color=\"#BE3144\" font_family=\"Courier New\"><i><b>STATISTICS</b></i></span>"));
   gtk_widget_show (stat_users);
-  gtk_notebook_set_tab_label (GTK_NOTEBOOK (crud), gtk_notebook_get_nth_page (GTK_NOTEBOOK (crud), 4), stat_users);
+  gtk_notebook_set_tab_label (GTK_NOTEBOOK (notebookcrudusers), gtk_notebook_get_nth_page (GTK_NOTEBOOK (notebookcrudusers), 4), stat_users);
   gtk_label_set_use_markup (GTK_LABEL (stat_users), TRUE);
 
   user = gtk_label_new (_(" <span font_size=\"xx-large\" color=\"#BE3144\" font_family=\"Courier New\"><i><b>USERS</b></i></span>"));
@@ -2824,16 +3010,16 @@ create_admin (void)
   gtk_notebook_set_tab_label_packing (GTK_NOTEBOOK (notebookadminuser), notebook7,
                                       TRUE, TRUE, GTK_PACK_START);
 
-  notebook3 = gtk_notebook_new ();
-  gtk_widget_show (notebook3);
-  gtk_container_add (GTK_CONTAINER (notebook7), notebook3);
-  gtk_notebook_set_tab_label_packing (GTK_NOTEBOOK (notebook7), notebook3,
+  notebookcrudets = gtk_notebook_new ();
+  gtk_widget_show (notebookcrudets);
+  gtk_container_add (GTK_CONTAINER (notebook7), notebookcrudets);
+  gtk_notebook_set_tab_label_packing (GTK_NOTEBOOK (notebook7), notebookcrudets,
                                       TRUE, TRUE, GTK_PACK_START);
 
   fixed9 = gtk_fixed_new ();
   gtk_widget_show (fixed9);
-  gtk_container_add (GTK_CONTAINER (notebook3), fixed9);
-  gtk_notebook_set_tab_label_packing (GTK_NOTEBOOK (notebook3), fixed9,
+  gtk_container_add (GTK_CONTAINER (notebookcrudets), fixed9);
+  gtk_notebook_set_tab_label_packing (GTK_NOTEBOOK (notebookcrudets), fixed9,
                                       TRUE, TRUE, GTK_PACK_START);
 
   adress_entry = gtk_entry_new ();
@@ -3035,15 +3221,36 @@ create_admin (void)
   gtk_widget_show (label93);
   gtk_box_pack_start (GTK_BOX (hbox18), label93, FALSE, FALSE, 0);
 
+  refreshetscreate = gtk_button_new ();
+  gtk_widget_show (refreshetscreate);
+  gtk_fixed_put (GTK_FIXED (fixed9), refreshetscreate, 1304, 8);
+  gtk_widget_set_size_request (refreshetscreate, 138, 30);
+
+  alignment355 = gtk_alignment_new (0.5, 0.5, 0, 0);
+  gtk_widget_show (alignment355);
+  gtk_container_add (GTK_CONTAINER (refreshetscreate), alignment355);
+
+  hbox355 = gtk_hbox_new (FALSE, 2);
+  gtk_widget_show (hbox355);
+  gtk_container_add (GTK_CONTAINER (alignment355), hbox355);
+
+  image386 = gtk_image_new_from_stock ("gtk-clear", GTK_ICON_SIZE_BUTTON);
+  gtk_widget_show (image386);
+  gtk_box_pack_start (GTK_BOX (hbox355), image386, FALSE, FALSE, 0);
+
+  label1586 = gtk_label_new_with_mnemonic (_("Refresh"));
+  gtk_widget_show (label1586);
+  gtk_box_pack_start (GTK_BOX (hbox355), label1586, FALSE, FALSE, 0);
+
   create_label_amin = gtk_label_new (_(" <span font_size=\"xx-large\" color=\"#BE3144\" font_family=\"Courier New\"><i><b>CREATE</b></i></span>"));
   gtk_widget_show (create_label_amin);
-  gtk_notebook_set_tab_label (GTK_NOTEBOOK (notebook3), gtk_notebook_get_nth_page (GTK_NOTEBOOK (notebook3), 0), create_label_amin);
+  gtk_notebook_set_tab_label (GTK_NOTEBOOK (notebookcrudets), gtk_notebook_get_nth_page (GTK_NOTEBOOK (notebookcrudets), 0), create_label_amin);
   gtk_label_set_use_markup (GTK_LABEL (create_label_amin), TRUE);
 
   fixed32 = gtk_fixed_new ();
   gtk_widget_show (fixed32);
-  gtk_container_add (GTK_CONTAINER (notebook3), fixed32);
-  gtk_notebook_set_tab_label_packing (GTK_NOTEBOOK (notebook3), fixed32,
+  gtk_container_add (GTK_CONTAINER (notebookcrudets), fixed32);
+  gtk_notebook_set_tab_label_packing (GTK_NOTEBOOK (notebookcrudets), fixed32,
                                       TRUE, TRUE, GTK_PACK_START);
 
   treeview4 = gtk_tree_view_new ();
@@ -3100,13 +3307,13 @@ create_admin (void)
 
   read_label_amin = gtk_label_new (_(" <span font_size=\"xx-large\" color=\"#BE3144\" font_family=\"Courier New\"><i><b>READ</b></i></span>"));
   gtk_widget_show (read_label_amin);
-  gtk_notebook_set_tab_label (GTK_NOTEBOOK (notebook3), gtk_notebook_get_nth_page (GTK_NOTEBOOK (notebook3), 1), read_label_amin);
+  gtk_notebook_set_tab_label (GTK_NOTEBOOK (notebookcrudets), gtk_notebook_get_nth_page (GTK_NOTEBOOK (notebookcrudets), 1), read_label_amin);
   gtk_label_set_use_markup (GTK_LABEL (read_label_amin), TRUE);
 
   fixed11 = gtk_fixed_new ();
   gtk_widget_show (fixed11);
-  gtk_container_add (GTK_CONTAINER (notebook3), fixed11);
-  gtk_notebook_set_tab_label_packing (GTK_NOTEBOOK (notebook3), fixed11,
+  gtk_container_add (GTK_CONTAINER (notebookcrudets), fixed11);
+  gtk_notebook_set_tab_label_packing (GTK_NOTEBOOK (notebookcrudets), fixed11,
                                       TRUE, TRUE, GTK_PACK_START);
 
   fixed33 = gtk_fixed_new ();
@@ -3417,15 +3624,36 @@ create_admin (void)
   gtk_widget_show (label98);
   gtk_box_pack_start (GTK_BOX (hbox23), label98, FALSE, FALSE, 0);
 
+  refreshetsupdate = gtk_button_new ();
+  gtk_widget_show (refreshetsupdate);
+  gtk_fixed_put (GTK_FIXED (fixed11), refreshetsupdate, 1304, 8);
+  gtk_widget_set_size_request (refreshetsupdate, 138, 30);
+
+  alignment356 = gtk_alignment_new (0.5, 0.5, 0, 0);
+  gtk_widget_show (alignment356);
+  gtk_container_add (GTK_CONTAINER (refreshetsupdate), alignment356);
+
+  hbox356 = gtk_hbox_new (FALSE, 2);
+  gtk_widget_show (hbox356);
+  gtk_container_add (GTK_CONTAINER (alignment356), hbox356);
+
+  image387 = gtk_image_new_from_stock ("gtk-clear", GTK_ICON_SIZE_BUTTON);
+  gtk_widget_show (image387);
+  gtk_box_pack_start (GTK_BOX (hbox356), image387, FALSE, FALSE, 0);
+
+  label1587 = gtk_label_new_with_mnemonic (_("Refresh"));
+  gtk_widget_show (label1587);
+  gtk_box_pack_start (GTK_BOX (hbox356), label1587, FALSE, FALSE, 0);
+
   update_label_amin = gtk_label_new (_(" <span font_size=\"xx-large\" color=\"#BE3144\" font_family=\"Courier New\"><i><b>UPDATE</b></i></span>"));
   gtk_widget_show (update_label_amin);
-  gtk_notebook_set_tab_label (GTK_NOTEBOOK (notebook3), gtk_notebook_get_nth_page (GTK_NOTEBOOK (notebook3), 2), update_label_amin);
+  gtk_notebook_set_tab_label (GTK_NOTEBOOK (notebookcrudets), gtk_notebook_get_nth_page (GTK_NOTEBOOK (notebookcrudets), 2), update_label_amin);
   gtk_label_set_use_markup (GTK_LABEL (update_label_amin), TRUE);
 
   fixed36 = gtk_fixed_new ();
   gtk_widget_show (fixed36);
-  gtk_container_add (GTK_CONTAINER (notebook3), fixed36);
-  gtk_notebook_set_tab_label_packing (GTK_NOTEBOOK (notebook3), fixed36,
+  gtk_container_add (GTK_CONTAINER (notebookcrudets), fixed36);
+  gtk_notebook_set_tab_label_packing (GTK_NOTEBOOK (notebookcrudets), fixed36,
                                       TRUE, TRUE, GTK_PACK_START);
 
   entry24 = gtk_entry_new ();
@@ -3588,9 +3816,30 @@ create_admin (void)
   gtk_widget_show (label99);
   gtk_box_pack_start (GTK_BOX (hbox24), label99, FALSE, FALSE, 0);
 
+  refreshetsdelete = gtk_button_new ();
+  gtk_widget_show (refreshetsdelete);
+  gtk_fixed_put (GTK_FIXED (fixed36), refreshetsdelete, 1304, 8);
+  gtk_widget_set_size_request (refreshetsdelete, 138, 30);
+
+  alignment357 = gtk_alignment_new (0.5, 0.5, 0, 0);
+  gtk_widget_show (alignment357);
+  gtk_container_add (GTK_CONTAINER (refreshetsdelete), alignment357);
+
+  hbox357 = gtk_hbox_new (FALSE, 2);
+  gtk_widget_show (hbox357);
+  gtk_container_add (GTK_CONTAINER (alignment357), hbox357);
+
+  image388 = gtk_image_new_from_stock ("gtk-clear", GTK_ICON_SIZE_BUTTON);
+  gtk_widget_show (image388);
+  gtk_box_pack_start (GTK_BOX (hbox357), image388, FALSE, FALSE, 0);
+
+  label1588 = gtk_label_new_with_mnemonic (_("Refresh"));
+  gtk_widget_show (label1588);
+  gtk_box_pack_start (GTK_BOX (hbox357), label1588, FALSE, FALSE, 0);
+
   delete_label_amin = gtk_label_new (_(" <span font_size=\"xx-large\" color=\"#BE3144\" font_family=\"Courier New\"><i><b>DELETE</b></i></span>"));
   gtk_widget_show (delete_label_amin);
-  gtk_notebook_set_tab_label (GTK_NOTEBOOK (notebook3), gtk_notebook_get_nth_page (GTK_NOTEBOOK (notebook3), 3), delete_label_amin);
+  gtk_notebook_set_tab_label (GTK_NOTEBOOK (notebookcrudets), gtk_notebook_get_nth_page (GTK_NOTEBOOK (notebookcrudets), 3), delete_label_amin);
   gtk_label_set_use_markup (GTK_LABEL (delete_label_amin), TRUE);
 
   labeladminetscrud = gtk_label_new (_(" <span font_size=\"xx-large\" color=\"#BE3144\" font_family=\"Courier New\"><i><b>CRUD</b></i></span>"));
@@ -3800,6 +4049,9 @@ create_admin (void)
   g_signal_connect ((gpointer) buttonlogoutCusers, "clicked",
                     G_CALLBACK (on_buttonlogoutCusers_clicked),
                     NULL);
+  g_signal_connect ((gpointer) refreshusercreate, "clicked",
+                    G_CALLBACK (on_refreshusercreate_clicked),
+                    NULL);
   g_signal_connect ((gpointer) treeviewreadusers, "row_activated",
                     G_CALLBACK (on_treeviewreadusers_row_activated),
                     NULL);
@@ -3827,6 +4079,9 @@ create_admin (void)
   g_signal_connect ((gpointer) buttonlogoutUusers, "clicked",
                     G_CALLBACK (on_buttonlogoutUusers_clicked),
                     NULL);
+  g_signal_connect ((gpointer) refreshuserupdate, "clicked",
+                    G_CALLBACK (on_refreshuserupdate_clicked),
+                    NULL);
   g_signal_connect ((gpointer) checkbuttoncondlusers, "toggled",
                     G_CALLBACK (on_checkbuttoncondlusers_toggled),
                     NULL);
@@ -3838,6 +4093,9 @@ create_admin (void)
                     NULL);
   g_signal_connect ((gpointer) buttonlogoutDusers, "clicked",
                     G_CALLBACK (on_buttonlogoutDusers_clicked),
+                    NULL);
+  g_signal_connect ((gpointer) refreshuserdelete, "clicked",
+                    G_CALLBACK (on_refreshuserdelete_clicked),
                     NULL);
   g_signal_connect ((gpointer) treeviewroleusers, "row_activated",
                     G_CALLBACK (on_treeviewroleusers_row_activated),
@@ -3875,6 +4133,9 @@ create_admin (void)
   g_signal_connect ((gpointer) logout_amin1, "clicked",
                     G_CALLBACK (on_logout_amin1_clicked),
                     NULL);
+  g_signal_connect ((gpointer) refreshetscreate, "clicked",
+                    G_CALLBACK (on_refreshetscreate_clicked),
+                    NULL);
   g_signal_connect ((gpointer) show_button_amin1, "clicked",
                     G_CALLBACK (on_show_button_amin1re_clicked),
                     NULL);
@@ -3902,6 +4163,9 @@ create_admin (void)
   g_signal_connect ((gpointer) logout_amin3, "clicked",
                     G_CALLBACK (on_logout_amin3_clicked),
                     NULL);
+  g_signal_connect ((gpointer) refreshetsupdate, "clicked",
+                    G_CALLBACK (on_refreshetsupdate_clicked),
+                    NULL);
   g_signal_connect ((gpointer) delete_search, "clicked",
                     G_CALLBACK (delete_search_clicked),
                     NULL);
@@ -3913,6 +4177,9 @@ create_admin (void)
                     NULL);
   g_signal_connect ((gpointer) logout_amin4, "clicked",
                     G_CALLBACK (on_logout_amin4_clicked),
+                    NULL);
+  g_signal_connect ((gpointer) refreshetsdelete, "clicked",
+                    G_CALLBACK (on_refreshetsdelete_clicked),
                     NULL);
   g_signal_connect ((gpointer) capacity_show_button1, "clicked",
                     G_CALLBACK (on_capacity_show_button1cap_clicked),
@@ -3939,7 +4206,7 @@ create_admin (void)
   GLADE_HOOKUP_OBJECT_NO_REF (admin, admin, "admin");
   GLADE_HOOKUP_OBJECT (admin, notebook5, "notebook5");
   GLADE_HOOKUP_OBJECT (admin, notebookadminuser, "notebookadminuser");
-  GLADE_HOOKUP_OBJECT (admin, crud, "crud");
+  GLADE_HOOKUP_OBJECT (admin, notebookcrudusers, "notebookcrudusers");
   GLADE_HOOKUP_OBJECT (admin, create_fix_users, "create_fix_users");
   GLADE_HOOKUP_OBJECT (admin, entrylastnameusers, "entrylastnameusers");
   GLADE_HOOKUP_OBJECT (admin, entrynameusers, "entrynameusers");
@@ -3978,15 +4245,20 @@ create_admin (void)
   GLADE_HOOKUP_OBJECT (admin, image2, "image2");
   GLADE_HOOKUP_OBJECT (admin, label75, "label75");
   GLADE_HOOKUP_OBJECT (admin, succofcreateusers, "succofcreateusers");
+  GLADE_HOOKUP_OBJECT (admin, image364, "image364");
+  GLADE_HOOKUP_OBJECT (admin, dateofentryusers, "dateofentryusers");
+  GLADE_HOOKUP_OBJECT (admin, yearofenrtyusers, "yearofenrtyusers");
+  GLADE_HOOKUP_OBJECT (admin, comboboxroleusers, "comboboxroleusers");
   GLADE_HOOKUP_OBJECT (admin, buttonlogoutCusers, "buttonlogoutCusers");
   GLADE_HOOKUP_OBJECT (admin, alignment8, "alignment8");
   GLADE_HOOKUP_OBJECT (admin, hbox8, "hbox8");
   GLADE_HOOKUP_OBJECT (admin, image9, "image9");
   GLADE_HOOKUP_OBJECT (admin, label83, "label83");
-  GLADE_HOOKUP_OBJECT (admin, image364, "image364");
-  GLADE_HOOKUP_OBJECT (admin, dateofentryusers, "dateofentryusers");
-  GLADE_HOOKUP_OBJECT (admin, yearofenrtyusers, "yearofenrtyusers");
-  GLADE_HOOKUP_OBJECT (admin, comboboxroleusers, "comboboxroleusers");
+  GLADE_HOOKUP_OBJECT (admin, refreshusercreate, "refreshusercreate");
+  GLADE_HOOKUP_OBJECT (admin, alignment352, "alignment352");
+  GLADE_HOOKUP_OBJECT (admin, hbox352, "hbox352");
+  GLADE_HOOKUP_OBJECT (admin, image383, "image383");
+  GLADE_HOOKUP_OBJECT (admin, label1583, "label1583");
   GLADE_HOOKUP_OBJECT (admin, create_users, "create_users");
   GLADE_HOOKUP_OBJECT (admin, read_fix_users, "read_fix_users");
   GLADE_HOOKUP_OBJECT (admin, treeviewreadusers, "treeviewreadusers");
@@ -4061,6 +4333,11 @@ create_admin (void)
   GLADE_HOOKUP_OBJECT (admin, label87, "label87");
   GLADE_HOOKUP_OBJECT (admin, image375, "image375");
   GLADE_HOOKUP_OBJECT (admin, comboboxuproleusers, "comboboxuproleusers");
+  GLADE_HOOKUP_OBJECT (admin, refreshuserupdate, "refreshuserupdate");
+  GLADE_HOOKUP_OBJECT (admin, alignment354, "alignment354");
+  GLADE_HOOKUP_OBJECT (admin, hbox354, "hbox354");
+  GLADE_HOOKUP_OBJECT (admin, image385, "image385");
+  GLADE_HOOKUP_OBJECT (admin, label1585, "label1585");
   GLADE_HOOKUP_OBJECT (admin, update_users, "update_users");
   GLADE_HOOKUP_OBJECT (admin, fixed40, "fixed40");
   GLADE_HOOKUP_OBJECT (admin, entryIDdlusers, "entryIDdlusers");
@@ -4105,6 +4382,11 @@ create_admin (void)
   GLADE_HOOKUP_OBJECT (admin, image341, "image341");
   GLADE_HOOKUP_OBJECT (admin, label133, "label133");
   GLADE_HOOKUP_OBJECT (admin, image376, "image376");
+  GLADE_HOOKUP_OBJECT (admin, refreshuserdelete, "refreshuserdelete");
+  GLADE_HOOKUP_OBJECT (admin, alignment353, "alignment353");
+  GLADE_HOOKUP_OBJECT (admin, hbox353, "hbox353");
+  GLADE_HOOKUP_OBJECT (admin, image384, "image384");
+  GLADE_HOOKUP_OBJECT (admin, label1584, "label1584");
   GLADE_HOOKUP_OBJECT (admin, delete_users, "delete_users");
   GLADE_HOOKUP_OBJECT (admin, fixed31, "fixed31");
   GLADE_HOOKUP_OBJECT (admin, treeviewroleusers, "treeviewroleusers");
@@ -4129,7 +4411,7 @@ create_admin (void)
   GLADE_HOOKUP_OBJECT (admin, stat_users, "stat_users");
   GLADE_HOOKUP_OBJECT (admin, user, "user");
   GLADE_HOOKUP_OBJECT (admin, notebook7, "notebook7");
-  GLADE_HOOKUP_OBJECT (admin, notebook3, "notebook3");
+  GLADE_HOOKUP_OBJECT (admin, notebookcrudets, "notebookcrudets");
   GLADE_HOOKUP_OBJECT (admin, fixed9, "fixed9");
   GLADE_HOOKUP_OBJECT (admin, adress_entry, "adress_entry");
   GLADE_HOOKUP_OBJECT (admin, capacity_entry, "capacity_entry");
@@ -4169,6 +4451,11 @@ create_admin (void)
   GLADE_HOOKUP_OBJECT (admin, hbox18, "hbox18");
   GLADE_HOOKUP_OBJECT (admin, image19, "image19");
   GLADE_HOOKUP_OBJECT (admin, label93, "label93");
+  GLADE_HOOKUP_OBJECT (admin, refreshetscreate, "refreshetscreate");
+  GLADE_HOOKUP_OBJECT (admin, alignment355, "alignment355");
+  GLADE_HOOKUP_OBJECT (admin, hbox355, "hbox355");
+  GLADE_HOOKUP_OBJECT (admin, image386, "image386");
+  GLADE_HOOKUP_OBJECT (admin, label1586, "label1586");
   GLADE_HOOKUP_OBJECT (admin, create_label_amin, "create_label_amin");
   GLADE_HOOKUP_OBJECT (admin, fixed32, "fixed32");
   GLADE_HOOKUP_OBJECT (admin, treeview4, "treeview4");
@@ -4246,6 +4533,11 @@ create_admin (void)
   GLADE_HOOKUP_OBJECT (admin, hbox23, "hbox23");
   GLADE_HOOKUP_OBJECT (admin, image24, "image24");
   GLADE_HOOKUP_OBJECT (admin, label98, "label98");
+  GLADE_HOOKUP_OBJECT (admin, refreshetsupdate, "refreshetsupdate");
+  GLADE_HOOKUP_OBJECT (admin, alignment356, "alignment356");
+  GLADE_HOOKUP_OBJECT (admin, hbox356, "hbox356");
+  GLADE_HOOKUP_OBJECT (admin, image387, "image387");
+  GLADE_HOOKUP_OBJECT (admin, label1587, "label1587");
   GLADE_HOOKUP_OBJECT (admin, update_label_amin, "update_label_amin");
   GLADE_HOOKUP_OBJECT (admin, fixed36, "fixed36");
   GLADE_HOOKUP_OBJECT (admin, entry24, "entry24");
@@ -4283,6 +4575,11 @@ create_admin (void)
   GLADE_HOOKUP_OBJECT (admin, hbox24, "hbox24");
   GLADE_HOOKUP_OBJECT (admin, image25, "image25");
   GLADE_HOOKUP_OBJECT (admin, label99, "label99");
+  GLADE_HOOKUP_OBJECT (admin, refreshetsdelete, "refreshetsdelete");
+  GLADE_HOOKUP_OBJECT (admin, alignment357, "alignment357");
+  GLADE_HOOKUP_OBJECT (admin, hbox357, "hbox357");
+  GLADE_HOOKUP_OBJECT (admin, image388, "image388");
+  GLADE_HOOKUP_OBJECT (admin, label1588, "label1588");
   GLADE_HOOKUP_OBJECT (admin, delete_label_amin, "delete_label_amin");
   GLADE_HOOKUP_OBJECT (admin, labeladminetscrud, "labeladminetscrud");
   GLADE_HOOKUP_OBJECT (admin, notebook8, "notebook8");
@@ -5886,6 +6183,7 @@ create_Director (void)
   GtkWidget *image8;
   GtkWidget *label115;
   GtkWidget *image371;
+  GtkWidget *refreshdiradd;
   GtkWidget *label98;
   GtkWidget *fixed17;
   GtkWidget *buttonshowalldirector;
@@ -5933,6 +6231,7 @@ create_Director (void)
   GtkWidget *hbox11;
   GtkWidget *image12;
   GtkWidget *label137;
+  GtkWidget *refreshdirupdate;
   GtkWidget *label163;
   GtkWidget *fixed23;
   GtkWidget *labeldate_del;
@@ -5961,6 +6260,7 @@ create_Director (void)
   GtkWidget *hbox13;
   GtkWidget *image14;
   GtkWidget *label147;
+  GtkWidget *refreshdirdelete;
   GtkWidget *label_id_del;
   GtkWidget *labelnotebookdirector;
 
@@ -6169,6 +6469,11 @@ create_Director (void)
   gtk_widget_show (image371);
   gtk_fixed_put (GTK_FIXED (director_add), image371, 1000, 16);
   gtk_widget_set_size_request (image371, 304, 232);
+
+  refreshdiradd = gtk_button_new_with_mnemonic (_("refresh"));
+  gtk_widget_show (refreshdiradd);
+  gtk_fixed_put (GTK_FIXED (director_add), refreshdiradd, 1328, 64);
+  gtk_widget_set_size_request (refreshdiradd, 80, 48);
 
   label98 = gtk_label_new (_("<span font_size=\"xx-large\" color=\"#BE3144\" font_family=\"Courier New\"><i><b>ADD A BLOOD REQUEST</b></i></span>"));
   gtk_widget_show (label98);
@@ -6420,6 +6725,11 @@ create_Director (void)
   gtk_widget_show (label137);
   gtk_box_pack_start (GTK_BOX (hbox11), label137, FALSE, FALSE, 0);
 
+  refreshdirupdate = gtk_button_new_with_mnemonic (_("refresh"));
+  gtk_widget_show (refreshdirupdate);
+  gtk_fixed_put (GTK_FIXED (fixed22), refreshdirupdate, 1192, 152);
+  gtk_widget_set_size_request (refreshdirupdate, 66, 29);
+
   label163 = gtk_label_new (_("<span font_size=\"xx-large\" color=\"#BE3144\" font_family=\"Courier New\"><i><b>UPDATE A BLOOD REQUEST</b></i></span>"));
   gtk_widget_show (label163);
   gtk_notebook_set_tab_label (GTK_NOTEBOOK (notebookcruddirector), gtk_notebook_get_nth_page (GTK_NOTEBOOK (notebookcruddirector), 2), label163);
@@ -6560,6 +6870,11 @@ create_Director (void)
   gtk_widget_show (label147);
   gtk_box_pack_start (GTK_BOX (hbox13), label147, FALSE, FALSE, 0);
 
+  refreshdirdelete = gtk_button_new_with_mnemonic (_("refresh"));
+  gtk_widget_show (refreshdirdelete);
+  gtk_fixed_put (GTK_FIXED (fixed23), refreshdirdelete, 1192, 152);
+  gtk_widget_set_size_request (refreshdirdelete, 66, 29);
+
   label_id_del = gtk_label_new (_("<span font_size=\"xx-large\" color=\"#BE3144\" font_family=\"Courier New\"><i><b>DELETE A BLOOD REQUEST</b></i></span>"));
   gtk_widget_show (label_id_del);
   gtk_notebook_set_tab_label (GTK_NOTEBOOK (notebookcruddirector), gtk_notebook_get_nth_page (GTK_NOTEBOOK (notebookcruddirector), 3), label_id_del);
@@ -6588,6 +6903,9 @@ create_Director (void)
   g_signal_connect ((gpointer) buttonlogoutdirector_add, "clicked",
                     G_CALLBACK (on_buttonlogoutdirector_add_clicked),
                     NULL);
+  g_signal_connect ((gpointer) refreshdiradd, "clicked",
+                    G_CALLBACK (on_refreshdiradd_clicked),
+                    NULL);
   g_signal_connect ((gpointer) buttonshowalldirector, "clicked",
                     G_CALLBACK (on_buttonshowalldirector_clicked),
                     NULL);
@@ -6606,6 +6924,9 @@ create_Director (void)
   g_signal_connect ((gpointer) buttonlogoutdirector_mod, "clicked",
                     G_CALLBACK (on_buttonlogoutdirector_mod_clicked),
                     NULL);
+  g_signal_connect ((gpointer) refreshdirupdate, "clicked",
+                    G_CALLBACK (on_refreshdirupdate_clicked),
+                    NULL);
   g_signal_connect ((gpointer) buttondel_br, "clicked",
                     G_CALLBACK (on_buttondel_br_clicked),
                     NULL);
@@ -6617,6 +6938,9 @@ create_Director (void)
                     NULL);
   g_signal_connect ((gpointer) buttonlogoutdirector_del, "clicked",
                     G_CALLBACK (on_buttonlogoutdirector_del_clicked),
+                    NULL);
+  g_signal_connect ((gpointer) refreshdirdelete, "clicked",
+                    G_CALLBACK (on_refreshdirdelete_clicked),
                     NULL);
 
   /* Store pointers to all widgets, for use by lookup_widget(). */
@@ -6656,6 +6980,7 @@ create_Director (void)
   GLADE_HOOKUP_OBJECT (Director, image8, "image8");
   GLADE_HOOKUP_OBJECT (Director, label115, "label115");
   GLADE_HOOKUP_OBJECT (Director, image371, "image371");
+  GLADE_HOOKUP_OBJECT (Director, refreshdiradd, "refreshdiradd");
   GLADE_HOOKUP_OBJECT (Director, label98, "label98");
   GLADE_HOOKUP_OBJECT (Director, fixed17, "fixed17");
   GLADE_HOOKUP_OBJECT (Director, buttonshowalldirector, "buttonshowalldirector");
@@ -6701,6 +7026,7 @@ create_Director (void)
   GLADE_HOOKUP_OBJECT (Director, hbox11, "hbox11");
   GLADE_HOOKUP_OBJECT (Director, image12, "image12");
   GLADE_HOOKUP_OBJECT (Director, label137, "label137");
+  GLADE_HOOKUP_OBJECT (Director, refreshdirupdate, "refreshdirupdate");
   GLADE_HOOKUP_OBJECT (Director, label163, "label163");
   GLADE_HOOKUP_OBJECT (Director, fixed23, "fixed23");
   GLADE_HOOKUP_OBJECT (Director, labeldate_del, "labeldate_del");
@@ -6728,6 +7054,7 @@ create_Director (void)
   GLADE_HOOKUP_OBJECT (Director, hbox13, "hbox13");
   GLADE_HOOKUP_OBJECT (Director, image14, "image14");
   GLADE_HOOKUP_OBJECT (Director, label147, "label147");
+  GLADE_HOOKUP_OBJECT (Director, refreshdirdelete, "refreshdirdelete");
   GLADE_HOOKUP_OBJECT (Director, label_id_del, "label_id_del");
   GLADE_HOOKUP_OBJECT (Director, labelnotebookdirector, "labelnotebookdirector");
 
@@ -6888,12 +7215,17 @@ create_Doctor (void)
   GtkWidget *image353;
   GtkWidget *label1573;
   GtkWidget *labeldon_CDOC;
+  GtkWidget *picblood;
   GtkWidget *butlogout_CDOC;
   GtkWidget *alignment345;
   GtkWidget *hbox345;
   GtkWidget *image355;
   GtkWidget *label1575;
-  GtkWidget *picblood;
+  GtkWidget *refreshdoccreate;
+  GtkWidget *alignment358;
+  GtkWidget *hbox358;
+  GtkWidget *image389;
+  GtkWidget *label1589;
   GtkWidget *label_CDOC;
   GtkWidget *fixed_MDOC;
   GtkWidget *labeldonrid_MDOC;
@@ -6935,6 +7267,11 @@ create_Doctor (void)
   GtkWidget *labeloutquantity_MDOC;
   GtkWidget *labeloutets_MDOC;
   GtkWidget *image372;
+  GtkWidget *refreshdocmod;
+  GtkWidget *alignment359;
+  GtkWidget *hbox359;
+  GtkWidget *image390;
+  GtkWidget *label1590;
   GtkWidget *label_MDOC;
   GtkWidget *fixed_RDOC;
   GtkWidget *treeview_RDOC;
@@ -6976,6 +7313,11 @@ create_Doctor (void)
   GtkWidget *hbox347;
   GtkWidget *image357;
   GtkWidget *label1577;
+  GtkWidget *refreshdocdel;
+  GtkWidget *alignment360;
+  GtkWidget *hbox360;
+  GtkWidget *image391;
+  GtkWidget *label1591;
   GtkWidget *label_DDOC;
   GtkWidget *fixed_SDOC;
   GtkWidget *butrefresh_SDOC;
@@ -6992,6 +7334,11 @@ create_Doctor (void)
   GtkWidget *hbox348;
   GtkWidget *image358;
   GtkWidget *label1578;
+  GtkWidget *refreshdocstat;
+  GtkWidget *alignment361;
+  GtkWidget *hbox361;
+  GtkWidget *image392;
+  GtkWidget *label1592;
   GtkWidget *label_SDOC;
   GtkWidget *DOCTORLAB_DOC;
 
@@ -7160,6 +7507,11 @@ create_Doctor (void)
   gtk_widget_set_size_request (labeldon_CDOC, 136, 32);
   gtk_label_set_use_markup (GTK_LABEL (labeldon_CDOC), TRUE);
 
+  picblood = create_pixmap (Doctor, "syrine.jpg");
+  gtk_widget_show (picblood);
+  gtk_fixed_put (GTK_FIXED (fixed_CDOC), picblood, 752, 104);
+  gtk_widget_set_size_request (picblood, 304, 296);
+
   butlogout_CDOC = gtk_button_new ();
   gtk_widget_show (butlogout_CDOC);
   gtk_fixed_put (GTK_FIXED (fixed_CDOC), butlogout_CDOC, 1000, 16);
@@ -7181,10 +7533,26 @@ create_Doctor (void)
   gtk_widget_show (label1575);
   gtk_box_pack_start (GTK_BOX (hbox345), label1575, FALSE, FALSE, 0);
 
-  picblood = create_pixmap (Doctor, "syrine.jpg");
-  gtk_widget_show (picblood);
-  gtk_fixed_put (GTK_FIXED (fixed_CDOC), picblood, 752, 104);
-  gtk_widget_set_size_request (picblood, 304, 296);
+  refreshdoccreate = gtk_button_new ();
+  gtk_widget_show (refreshdoccreate);
+  gtk_fixed_put (GTK_FIXED (fixed_CDOC), refreshdoccreate, 880, 16);
+  gtk_widget_set_size_request (refreshdoccreate, 110, 35);
+
+  alignment358 = gtk_alignment_new (0.5, 0.5, 0, 0);
+  gtk_widget_show (alignment358);
+  gtk_container_add (GTK_CONTAINER (refreshdoccreate), alignment358);
+
+  hbox358 = gtk_hbox_new (FALSE, 2);
+  gtk_widget_show (hbox358);
+  gtk_container_add (GTK_CONTAINER (alignment358), hbox358);
+
+  image389 = gtk_image_new_from_stock ("gtk-clear", GTK_ICON_SIZE_BUTTON);
+  gtk_widget_show (image389);
+  gtk_box_pack_start (GTK_BOX (hbox358), image389, FALSE, FALSE, 0);
+
+  label1589 = gtk_label_new_with_mnemonic (_("Refresh"));
+  gtk_widget_show (label1589);
+  gtk_box_pack_start (GTK_BOX (hbox358), label1589, FALSE, FALSE, 0);
 
   label_CDOC = gtk_label_new (_("<span font_size=\"xx-large\" color=\"#BE3144\" font_family=\"Courier New\"><i><b>CREATE</b></i></span>"));
   gtk_widget_show (label_CDOC);
@@ -7401,6 +7769,27 @@ create_Doctor (void)
   gtk_fixed_put (GTK_FIXED (fixed_MDOC), image372, 800, 104);
   gtk_widget_set_size_request (image372, 304, 296);
 
+  refreshdocmod = gtk_button_new ();
+  gtk_widget_show (refreshdocmod);
+  gtk_fixed_put (GTK_FIXED (fixed_MDOC), refreshdocmod, 848, 16);
+  gtk_widget_set_size_request (refreshdocmod, 110, 35);
+
+  alignment359 = gtk_alignment_new (0.5, 0.5, 0, 0);
+  gtk_widget_show (alignment359);
+  gtk_container_add (GTK_CONTAINER (refreshdocmod), alignment359);
+
+  hbox359 = gtk_hbox_new (FALSE, 2);
+  gtk_widget_show (hbox359);
+  gtk_container_add (GTK_CONTAINER (alignment359), hbox359);
+
+  image390 = gtk_image_new_from_stock ("gtk-clear", GTK_ICON_SIZE_BUTTON);
+  gtk_widget_show (image390);
+  gtk_box_pack_start (GTK_BOX (hbox359), image390, FALSE, FALSE, 0);
+
+  label1590 = gtk_label_new_with_mnemonic (_("Refresh"));
+  gtk_widget_show (label1590);
+  gtk_box_pack_start (GTK_BOX (hbox359), label1590, FALSE, FALSE, 0);
+
   label_MDOC = gtk_label_new (_("<span font_size=\"xx-large\" color=\"#BE3144\" font_family=\"Courier New\"><i><b>MODIFY</b></i></span>"));
   gtk_widget_show (label_MDOC);
   gtk_notebook_set_tab_label (GTK_NOTEBOOK (note_DOC), gtk_notebook_get_nth_page (GTK_NOTEBOOK (note_DOC), 1), label_MDOC);
@@ -7585,6 +7974,27 @@ create_Doctor (void)
   gtk_widget_show (label1577);
   gtk_box_pack_start (GTK_BOX (hbox347), label1577, FALSE, FALSE, 0);
 
+  refreshdocdel = gtk_button_new ();
+  gtk_widget_show (refreshdocdel);
+  gtk_fixed_put (GTK_FIXED (fixed_DDOC), refreshdocdel, 880, 16);
+  gtk_widget_set_size_request (refreshdocdel, 110, 35);
+
+  alignment360 = gtk_alignment_new (0.5, 0.5, 0, 0);
+  gtk_widget_show (alignment360);
+  gtk_container_add (GTK_CONTAINER (refreshdocdel), alignment360);
+
+  hbox360 = gtk_hbox_new (FALSE, 2);
+  gtk_widget_show (hbox360);
+  gtk_container_add (GTK_CONTAINER (alignment360), hbox360);
+
+  image391 = gtk_image_new_from_stock ("gtk-clear", GTK_ICON_SIZE_BUTTON);
+  gtk_widget_show (image391);
+  gtk_box_pack_start (GTK_BOX (hbox360), image391, FALSE, FALSE, 0);
+
+  label1591 = gtk_label_new_with_mnemonic (_("Refresh"));
+  gtk_widget_show (label1591);
+  gtk_box_pack_start (GTK_BOX (hbox360), label1591, FALSE, FALSE, 0);
+
   label_DDOC = gtk_label_new (_("<span font_size=\"xx-large\" color=\"#BE3144\" font_family=\"Courier New\"><i><b>DELETE</b></i></span>"));
   gtk_widget_show (label_DDOC);
   gtk_notebook_set_tab_label (GTK_NOTEBOOK (note_DOC), gtk_notebook_get_nth_page (GTK_NOTEBOOK (note_DOC), 3), label_DDOC);
@@ -7663,6 +8073,27 @@ create_Doctor (void)
   gtk_widget_show (label1578);
   gtk_box_pack_start (GTK_BOX (hbox348), label1578, FALSE, FALSE, 0);
 
+  refreshdocstat = gtk_button_new ();
+  gtk_widget_show (refreshdocstat);
+  gtk_fixed_put (GTK_FIXED (fixed_SDOC), refreshdocstat, 856, 16);
+  gtk_widget_set_size_request (refreshdocstat, 110, 35);
+
+  alignment361 = gtk_alignment_new (0.5, 0.5, 0, 0);
+  gtk_widget_show (alignment361);
+  gtk_container_add (GTK_CONTAINER (refreshdocstat), alignment361);
+
+  hbox361 = gtk_hbox_new (FALSE, 2);
+  gtk_widget_show (hbox361);
+  gtk_container_add (GTK_CONTAINER (alignment361), hbox361);
+
+  image392 = gtk_image_new_from_stock ("gtk-clear", GTK_ICON_SIZE_BUTTON);
+  gtk_widget_show (image392);
+  gtk_box_pack_start (GTK_BOX (hbox361), image392, FALSE, FALSE, 0);
+
+  label1592 = gtk_label_new_with_mnemonic (_("Refresh"));
+  gtk_widget_show (label1592);
+  gtk_box_pack_start (GTK_BOX (hbox361), label1592, FALSE, FALSE, 0);
+
   label_SDOC = gtk_label_new (_("<span font_size=\"xx-large\" color=\"#BE3144\" font_family=\"Courier New\"><i><b>STATISTICS</b></i></span>"));
   gtk_widget_show (label_SDOC);
   gtk_notebook_set_tab_label (GTK_NOTEBOOK (note_DOC), gtk_notebook_get_nth_page (GTK_NOTEBOOK (note_DOC), 4), label_SDOC);
@@ -7679,6 +8110,9 @@ create_Doctor (void)
   g_signal_connect ((gpointer) butlogout_CDOC, "clicked",
                     G_CALLBACK (on_butlogout_CDOC_clicked),
                     NULL);
+  g_signal_connect ((gpointer) refreshdoccreate, "clicked",
+                    G_CALLBACK (on_refreshdoccreate_clicked),
+                    NULL);
   g_signal_connect ((gpointer) but_idfound_DOC, "clicked",
                     G_CALLBACK (on_but_idfound_DOC_clicked),
                     NULL);
@@ -7687,6 +8121,9 @@ create_Doctor (void)
                     NULL);
   g_signal_connect ((gpointer) butmodify_MDOC, "clicked",
                     G_CALLBACK (on_butmodify_MDOC_clicked),
+                    NULL);
+  g_signal_connect ((gpointer) refreshdocmod, "clicked",
+                    G_CALLBACK (on_refreshdocmod_clicked),
                     NULL);
   g_signal_connect ((gpointer) treeview_RDOC, "row_activated",
                     G_CALLBACK (on_treeview_RDOC_row_activated),
@@ -7706,6 +8143,9 @@ create_Doctor (void)
   g_signal_connect ((gpointer) butlogout_DDOC, "clicked",
                     G_CALLBACK (on_butlogout_DDOC_clicked),
                     NULL);
+  g_signal_connect ((gpointer) refreshdocdel, "clicked",
+                    G_CALLBACK (on_refreshdocdel_clicked),
+                    NULL);
   g_signal_connect ((gpointer) butrefresh_SDOC, "clicked",
                     G_CALLBACK (on_butrefresh_SDOC_clicked),
                     NULL);
@@ -7720,6 +8160,9 @@ create_Doctor (void)
                     NULL);
   g_signal_connect ((gpointer) butlogout_SDOC, "clicked",
                     G_CALLBACK (on_butlogout_SDOC_clicked),
+                    NULL);
+  g_signal_connect ((gpointer) refreshdocstat, "clicked",
+                    G_CALLBACK (on_refreshdocstat_clicked),
                     NULL);
 
   /* Store pointers to all widgets, for use by lookup_widget(). */
@@ -7749,12 +8192,17 @@ create_Doctor (void)
   GLADE_HOOKUP_OBJECT (Doctor, image353, "image353");
   GLADE_HOOKUP_OBJECT (Doctor, label1573, "label1573");
   GLADE_HOOKUP_OBJECT (Doctor, labeldon_CDOC, "labeldon_CDOC");
+  GLADE_HOOKUP_OBJECT (Doctor, picblood, "picblood");
   GLADE_HOOKUP_OBJECT (Doctor, butlogout_CDOC, "butlogout_CDOC");
   GLADE_HOOKUP_OBJECT (Doctor, alignment345, "alignment345");
   GLADE_HOOKUP_OBJECT (Doctor, hbox345, "hbox345");
   GLADE_HOOKUP_OBJECT (Doctor, image355, "image355");
   GLADE_HOOKUP_OBJECT (Doctor, label1575, "label1575");
-  GLADE_HOOKUP_OBJECT (Doctor, picblood, "picblood");
+  GLADE_HOOKUP_OBJECT (Doctor, refreshdoccreate, "refreshdoccreate");
+  GLADE_HOOKUP_OBJECT (Doctor, alignment358, "alignment358");
+  GLADE_HOOKUP_OBJECT (Doctor, hbox358, "hbox358");
+  GLADE_HOOKUP_OBJECT (Doctor, image389, "image389");
+  GLADE_HOOKUP_OBJECT (Doctor, label1589, "label1589");
   GLADE_HOOKUP_OBJECT (Doctor, label_CDOC, "label_CDOC");
   GLADE_HOOKUP_OBJECT (Doctor, fixed_MDOC, "fixed_MDOC");
   GLADE_HOOKUP_OBJECT (Doctor, labeldonrid_MDOC, "labeldonrid_MDOC");
@@ -7791,6 +8239,11 @@ create_Doctor (void)
   GLADE_HOOKUP_OBJECT (Doctor, labeloutquantity_MDOC, "labeloutquantity_MDOC");
   GLADE_HOOKUP_OBJECT (Doctor, labeloutets_MDOC, "labeloutets_MDOC");
   GLADE_HOOKUP_OBJECT (Doctor, image372, "image372");
+  GLADE_HOOKUP_OBJECT (Doctor, refreshdocmod, "refreshdocmod");
+  GLADE_HOOKUP_OBJECT (Doctor, alignment359, "alignment359");
+  GLADE_HOOKUP_OBJECT (Doctor, hbox359, "hbox359");
+  GLADE_HOOKUP_OBJECT (Doctor, image390, "image390");
+  GLADE_HOOKUP_OBJECT (Doctor, label1590, "label1590");
   GLADE_HOOKUP_OBJECT (Doctor, label_MDOC, "label_MDOC");
   GLADE_HOOKUP_OBJECT (Doctor, fixed_RDOC, "fixed_RDOC");
   GLADE_HOOKUP_OBJECT (Doctor, treeview_RDOC, "treeview_RDOC");
@@ -7828,6 +8281,11 @@ create_Doctor (void)
   GLADE_HOOKUP_OBJECT (Doctor, hbox347, "hbox347");
   GLADE_HOOKUP_OBJECT (Doctor, image357, "image357");
   GLADE_HOOKUP_OBJECT (Doctor, label1577, "label1577");
+  GLADE_HOOKUP_OBJECT (Doctor, refreshdocdel, "refreshdocdel");
+  GLADE_HOOKUP_OBJECT (Doctor, alignment360, "alignment360");
+  GLADE_HOOKUP_OBJECT (Doctor, hbox360, "hbox360");
+  GLADE_HOOKUP_OBJECT (Doctor, image391, "image391");
+  GLADE_HOOKUP_OBJECT (Doctor, label1591, "label1591");
   GLADE_HOOKUP_OBJECT (Doctor, label_DDOC, "label_DDOC");
   GLADE_HOOKUP_OBJECT (Doctor, fixed_SDOC, "fixed_SDOC");
   GLADE_HOOKUP_OBJECT (Doctor, butrefresh_SDOC, "butrefresh_SDOC");
@@ -7843,6 +8301,11 @@ create_Doctor (void)
   GLADE_HOOKUP_OBJECT (Doctor, hbox348, "hbox348");
   GLADE_HOOKUP_OBJECT (Doctor, image358, "image358");
   GLADE_HOOKUP_OBJECT (Doctor, label1578, "label1578");
+  GLADE_HOOKUP_OBJECT (Doctor, refreshdocstat, "refreshdocstat");
+  GLADE_HOOKUP_OBJECT (Doctor, alignment361, "alignment361");
+  GLADE_HOOKUP_OBJECT (Doctor, hbox361, "hbox361");
+  GLADE_HOOKUP_OBJECT (Doctor, image392, "image392");
+  GLADE_HOOKUP_OBJECT (Doctor, label1592, "label1592");
   GLADE_HOOKUP_OBJECT (Doctor, label_SDOC, "label_SDOC");
   GLADE_HOOKUP_OBJECT (Doctor, DOCTORLAB_DOC, "DOCTORLAB_DOC");
 

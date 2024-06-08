@@ -367,5 +367,73 @@ remove("RDV.txt");
 rename("dump.txt", "RDV.txt");
 }}
 
+void afficher_fichierss1(GtkWidget *list) {
+    GtkCellRenderer *renderer;
+    GtkTreeViewColumn *column;
+    GtkTreeIter iter;
+    GtkListStore *store;
+     char str_id[50], str_day[50], str_month[50], str_year[50];
+    rdv R;
+
+    store = NULL;
+
+    FILE *f;
+
+    store = gtk_tree_view_get_model(list);
+    if (store == NULL) {
+
+        renderer = gtk_cell_renderer_text_new();
+        column = gtk_tree_view_column_new_with_attributes("appointement id", renderer, "text", ID, NULL);
+        gtk_tree_view_append_column(GTK_TREE_VIEW(list), column);
+
+        renderer = gtk_cell_renderer_text_new();
+        column = gtk_tree_view_column_new_with_attributes("establishment name", renderer, "text", ESTABLISHMENT, NULL);
+        gtk_tree_view_append_column(GTK_TREE_VIEW(list), column);
+
+        renderer = gtk_cell_renderer_text_new();
+        column = gtk_tree_view_column_new_with_attributes("day", renderer, "text", DAY, NULL);
+        gtk_tree_view_append_column(GTK_TREE_VIEW(list), column);
+
+        renderer = gtk_cell_renderer_text_new();
+        column = gtk_tree_view_column_new_with_attributes("month", renderer, "text", MONTH, NULL);
+        gtk_tree_view_append_column(GTK_TREE_VIEW(list), column);
+
+        renderer = gtk_cell_renderer_text_new();
+        column = gtk_tree_view_column_new_with_attributes("year", renderer, "text", YEAR, NULL);
+        gtk_tree_view_append_column(GTK_TREE_VIEW(list), column);
+
+        renderer = gtk_cell_renderer_text_new();
+        column = gtk_tree_view_column_new_with_attributes("time", renderer, "text", TT, NULL);
+        gtk_tree_view_append_column(GTK_TREE_VIEW(list), column);}
+
+        store = gtk_list_store_new(COLUMNS, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING);
+
+        f = fopen("RDVarchive.txt", "r");
+        if (f == NULL) {
+            perror("Erreur lors de l'ouverture du fichier");
+            return;
+        } else {
+            while (fscanf(f, "%d %s %d %d %d %s\n", &R.id, R.establishment, &R.date_rdv.day, &R.date_rdv.month, &R.date_rdv.year, R.tt) != EOF) {
+                gtk_list_store_append(store, &iter);
+                sprintf(str_id, "%d", R.id);
+                sprintf(str_day, "%d", R.date_rdv.day);
+                sprintf(str_month, "%d", R.date_rdv.month);
+                sprintf(str_year, "%d", R.date_rdv.year);
+
+                gtk_list_store_set(store, &iter,
+                                   ID, str_id,
+                                   ESTABLISHMENT, R.establishment,
+                                   DAY, str_day,
+                                   MONTH, str_month,
+                                   YEAR, str_year,
+                                   TT, R.tt,
+                                   -1);
+            }
+
+            fclose(f);
+            gtk_tree_view_set_model(GTK_TREE_VIEW(list), GTK_TREE_MODEL(store));
+            g_object_unref(store);
+        }
+    }
 
 

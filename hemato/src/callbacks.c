@@ -14,8 +14,264 @@ extern GtkWidget *homepage;
 
 void show_homepage(GtkWidget *current_window) {
     gtk_widget_hide(current_window);
+	GtkWidget *notebook;
+	int a=1;
+
+
+    homepage = create_homepage ();
     gtk_widget_show(homepage);
+    notebook = lookup_widget(homepage, "notebook1");
+    gtk_notebook_set_current_page(GTK_NOTEBOOK(notebook), a);
 }
+///////////////////////refresh
+// Function to refresh the director
+void refresh_director(GtkWidget *button) {
+    GtkWidget *window;
+    GtkWidget *notebook;
+
+    // Get the top-level window containing the button
+    window = gtk_widget_get_toplevel(GTK_WIDGET(button));
+
+    // Find the notebook widget by name
+    notebook = lookup_widget(window, "notebookcruddirector");
+
+    // Verify that the notebook pointer is valid
+    if (notebook == NULL) {
+        g_print("Error: Notebook widget not found\n");
+        return;
+    }
+
+    // Get the current page index
+    gint current_page = gtk_notebook_get_current_page(GTK_NOTEBOOK(notebook));
+    g_print("Current page index: %d\n", current_page);
+
+    // Hide the current window
+    gtk_widget_hide(window);
+
+    // Create and show the new window
+    window = create_Director();
+    gtk_widget_show(window);
+
+    // Find the notebook widget in the new window
+    notebook = lookup_widget(window, "notebookcruddirector");
+
+    // Verify that the notebook pointer in the new window is valid
+    if (notebook == NULL) {
+        g_print("Error: Notebook widget not found in the new window\n");
+        return;
+    }
+
+    // Set the current page of the notebook after the wait
+    gtk_notebook_set_current_page(GTK_NOTEBOOK(notebook), current_page);
+}
+
+
+
+
+
+void refresh_donor(GtkWidget *button) {
+    GtkWidget *window;
+    GtkWidget *notebook;
+
+    // Get the top-level window containing the button
+    window = gtk_widget_get_toplevel(GTK_WIDGET(button));
+
+    // Find the notebook widget by name
+    notebook = lookup_widget(window, "notebookdonorcrud");
+
+    // Verify that the notebook pointer is valid
+    if (notebook == NULL) {
+        g_print("Error: Notebook widget not found\n");
+        return;
+    }
+
+    // Get the current page index
+    gint current_page = gtk_notebook_get_current_page(GTK_NOTEBOOK(notebook));
+    g_print("Current page index: %d\n", current_page);
+
+    // Hide the current window
+    gtk_widget_hide(window);
+
+    // Create and show the new window
+    window = create_appointement ();  
+    gtk_widget_show(window);
+
+    // Find the notebook widget in the new window
+    notebook = lookup_widget(window, "notebookdonorcrud");
+
+    // Verify that the notebook pointer in the new window is valid
+    if (notebook == NULL) {
+        g_print("Error: Notebook widget not found in the new window\n");
+        return;
+    }
+
+    // Set the current page of the notebook after the wait
+    gtk_notebook_set_current_page(GTK_NOTEBOOK(notebook), current_page);
+}
+
+
+void refresh_adminets(GtkWidget *button) {
+    GtkWidget *window;
+    GtkWidget *notebook;
+GtkWidget *notebook1;
+int amine=1;
+
+    // Get the top-level window containing the button
+    window = gtk_widget_get_toplevel(GTK_WIDGET(button));
+
+    // Find the notebook widget by name
+    notebook = lookup_widget(window, "notebookcrudets");
+notebook1 = lookup_widget(window, "notebookadminuser");
+
+gtk_notebook_set_current_page(GTK_NOTEBOOK(notebook1), amine);
+
+    // Verify that the notebook pointer is valid
+    if (notebook == NULL) {
+        g_print("Error: Notebook widget not found\n");
+        return;
+    }
+
+    // Get the current page index
+    gint current_page = gtk_notebook_get_current_page(GTK_NOTEBOOK(notebook));
+    g_print("Current page index: %d\n", current_page);
+
+    // Hide the current window
+    gtk_widget_hide(window);
+
+    // Create and show the new window
+    window = create_admin ();   
+    gtk_widget_show(window);
+
+    // Find the notebook widget in the new window
+    notebook = lookup_widget(window, "notebookcrudets");
+
+    // Verify that the notebook pointer in the new window is valid
+    if (notebook == NULL) {
+        g_print("Error: Notebook widget not found in the new window\n");
+        return;
+    }
+
+    // Set the current page of the notebook after the wait
+    gtk_notebook_set_current_page(GTK_NOTEBOOK(notebook), current_page);
+}
+
+
+void refresh_adminuser(GtkWidget *button) {
+    GtkWidget *window;
+    GtkWidget *notebook;
+
+    // Get the top-level window containing the button
+    window = gtk_widget_get_toplevel(GTK_WIDGET(button));
+
+    // Find the notebook widget by name
+    notebook = lookup_widget(window, "notebookcrudusers");
+
+    // Verify that the notebook pointer is valid
+    if (notebook == NULL) {
+        g_print("Error: Notebook widget not found\n");
+        return;
+    }
+
+    // Get the current page index
+    gint current_page = gtk_notebook_get_current_page(GTK_NOTEBOOK(notebook));
+    g_print("Current page index: %d\n", current_page);
+
+    // Hide the current window
+    gtk_widget_hide(window);
+
+    // Create and show the new window
+    window = create_admin ();
+    gtk_widget_show(window);
+
+    // Find the notebook widget in the new window
+    notebook = lookup_widget(window, "notebookcrudusers");
+
+    // Verify that the notebook pointer in the new window is valid
+    if (notebook == NULL) {
+        g_print("Error: Notebook widget not found in the new window\n");
+        return;
+    }
+
+    // Set the current page of the notebook after the wait
+    gtk_notebook_set_current_page(GTK_NOTEBOOK(notebook), current_page);
+}
+
+void refresh_doctor(GtkWidget *button) {
+    GtkWidget *window;
+    GtkWidget *notebook;
+
+    // Get the top-level window containing the button
+    window = gtk_widget_get_toplevel(GTK_WIDGET(button));
+
+    // Find the notebook widget by name
+    notebook = lookup_widget(window, "note_DOC");
+
+    // Verify that the notebook pointer is valid
+    if (notebook == NULL) {
+        g_print("Error: Notebook widget not found\n");
+        return;
+    }
+
+    // Get the current page index
+    gint current_page = gtk_notebook_get_current_page(GTK_NOTEBOOK(notebook));
+    g_print("Current page index: %d\n", current_page);
+
+    // Hide the current window
+    gtk_widget_hide(window);
+
+    // Create and show the new window
+    window = create_Doctor ();
+    gtk_widget_show(window);
+
+    // Find the notebook widget in the new window
+    notebook = lookup_widget(window, "note_DOC");
+
+    // Verify that the notebook pointer in the new window is valid
+    if (notebook == NULL) {
+        g_print("Error: Notebook widget not found in the new window\n");
+        return;
+    }
+
+    // Set the current page of the notebook after the wait
+    gtk_notebook_set_current_page(GTK_NOTEBOOK(notebook), current_page);
+}
+///////////////////////refresh
+/////////////////////////////////////new file
+void get_login(const char *input_filename, const char *output_filename) {
+    FILE *input_file = fopen(input_filename, "r");
+    if (!input_file) {
+        perror("Failed to open input file");
+        return;
+    }
+
+    FILE *output_file = fopen(output_filename, "w");
+    if (!output_file) {
+        perror("Failed to open output file");
+        fclose(input_file);
+        return;
+    }
+
+    char line[1024];
+    while (fgets(line, sizeof(line), input_file)) {
+        char *first_word = NULL;
+        char *last_word = NULL;
+        char *token = strtok(line, " \t\n");
+
+        if (token) {
+            first_word = token;
+            while (token) {
+                last_word = token;
+                token = strtok(NULL, " \t\n");
+            }
+
+            fprintf(output_file, "%s %s\n", first_word, last_word);
+        }
+    }
+
+    fclose(input_file);
+    fclose(output_file);
+}
+/////////////////////////new file
 ////////////ahmed///////////////
 int choixurgdirector=1;
 int id_found_mod_director;
@@ -101,6 +357,9 @@ int x= ajouter_sign("SIGN_UP.txt", s );
 
 if (x==1){
 gtk_label_set_text(GTK_LABEL(OUT),"SIGNED UP SUCCESSFULLY");
+const char *input_filename = "SIGN_UP.txt";
+    const char *output_filename = "clientlog.txt";
+    get_login(input_filename, output_filename);
 
 
 }
@@ -180,6 +439,7 @@ FILE * f=fopen("RDV.txt", "r");
 idr++;
 r.id=idr;
 int x=ajouter_RDV("RDV.txt" ,  r  );
+int arch=ajouter_RDV("RDVarchive.txt" ,  r  );
 
 
 
@@ -654,7 +914,7 @@ void
 on_show_history_clicked                (GtkWidget       *objet_graphique,
                                         gpointer         user_data)
 {
-GtkWidget *treeview1; 
+/*GtkWidget *treeview1; 
 GtkWidget *ID;
 ID = lookup_widget(objet_graphique, "full_name_rdv");
 char a[90];
@@ -662,7 +922,13 @@ strcpy(a,(gtk_entry_get_text(GTK_ENTRY(ID))));
 treeview1=lookup_widget(objet_graphique,"treeviewhisto"); 
 historique ("Don.txt", a);
 afficher_fichiersss(treeview1); 
-remove("myhistory.txt");
+remove("myhistory.txt");*/
+
+GtkWidget *treeview1; 
+
+treeview1=lookup_widget(objet_graphique,"treeviewhisto"); 
+
+afficher_fichierss1(treeview1);
 
 }
 ///////////////yahya///////////////////
@@ -1374,7 +1640,7 @@ int id;
 
 // pointers 
 inputup1=lookup_widget(objet_graphique,"id_entry1");
-outputunfoundup=lookup_widget(objet_graphique,"label135");
+outputunfoundup=lookup_widget(objet_graphique,"label1352");
 
 //  pointer
 strcpy(idtxt,gtk_entry_get_text(GTK_ENTRY(inputup1)));
@@ -2730,7 +2996,6 @@ outputmsgfoundiddel=lookup_widget(objet_graphique,"labelbr_id_del");
 
 // from pointer to var
 id_cher=gtk_spin_button_get_value_as_int(GTK_SPIN_BUTTON(input1_1));
-
 // chercher for br 
 
     br_cher=chercher_br("br.txt",id_cher );
@@ -3259,12 +3524,14 @@ void
 on_button_log_in1_clicked              (GtkButton       *objet,
                                         gpointer         user_data)
 {
-int dir,doc,adm,cl,nr;
+int dir,doc,adm,cl,nr,fail=1;
 GtkWidget*users;
 GtkWidget*passwords;
+GtkWidget*outputlog;
 
 char username [50] ;
 char password[50];
+outputlog = lookup_widget(objet, "loginoutput");
 users = lookup_widget(objet, "name_log");
 passwords = lookup_widget(objet, "password_log");
 strcpy(username,gtk_entry_get_text(GTK_ENTRY(users)));
@@ -3277,6 +3544,7 @@ adm=loginUser("adminlog.txt", username , password);
 cl=loginUser("clientlog.txt", username , password);
 nr=loginUser("nurselog.txt", username , password);
  if (dir==1){
+  fail=0;
   GtkWidget *window1;
   GtkWidget *window2;
   window2 = create_Director ();
@@ -3285,14 +3553,17 @@ nr=loginUser("nurselog.txt", username , password);
   gtk_widget_hide (window1);}
 
  if (doc==1){
+
+  fail=0;
   GtkWidget *window1;
   GtkWidget *window2;
-  window2 = create_Doctor ();
+  window2 = create_Doctor ();   
   gtk_widget_show (window2);
   window1 = lookup_widget(objet, "homepage");
   gtk_widget_hide (window1);}
 
  if (adm==1){
+  fail=0;
   GtkWidget *window1;
   GtkWidget *window2;
   window2 = create_admin ();
@@ -3301,6 +3572,7 @@ nr=loginUser("nurselog.txt", username , password);
   gtk_widget_hide (window1);}
 
  if (cl==1){
+  fail=0;
   GtkWidget *window1;
   GtkWidget *window2;
   window2 = create_appointement ();
@@ -3309,12 +3581,15 @@ nr=loginUser("nurselog.txt", username , password);
   gtk_widget_hide (window1);}
 
  if (nr==1){
+  fail=0;
   GtkWidget *window1;
   GtkWidget *window2;
   window2 = create_window_gestionfiche();
   gtk_widget_show (window2);
   window1 = lookup_widget(objet, "homepage");
   gtk_widget_hide (window1);}
+ if (fail==1){
+  gtk_label_set_text(GTK_LABEL(outputlog),"please check your credentials and try again");}
 
 }
 
@@ -3418,3 +3693,137 @@ on_butlogout_SDOC_clicked              (GtkButton       *button,
     show_homepage(current_window);
 }
 
+
+
+
+void on_testingrefresh_clicked(GtkButton *button, gpointer user_data) {
+
+}
+
+void
+on_Refreshdonorchange_clicked          (GtkButton       *button,
+                                        gpointer         user_data)
+{
+refresh_donor(button);
+}
+
+
+void
+on_refreshdonorcancel_clicked          (GtkButton       *button,
+                                        gpointer         user_data)
+{
+refresh_donor(button);
+}
+
+
+void
+on_refreshusercreate_clicked           (GtkButton       *button,
+                                        gpointer         user_data)
+{
+refresh_adminuser(button);
+}
+
+
+void
+on_refreshuserupdate_clicked           (GtkButton       *button,
+                                        gpointer         user_data)
+{
+refresh_adminuser(button);
+}
+
+
+void
+on_refreshuserdelete_clicked           (GtkButton       *button,
+                                        gpointer         user_data)
+{
+refresh_adminuser(button);
+}
+
+
+void
+on_refreshetscreate_clicked            (GtkButton       *button,
+                                        gpointer         user_data)
+{
+refresh_adminets(button);
+}
+
+
+void
+on_refreshetsupdate_clicked            (GtkButton       *button,
+                                        gpointer         user_data)
+{
+refresh_adminets(button);
+}
+
+
+void
+on_refreshetsdelete_clicked            (GtkButton       *button,
+                                        gpointer         user_data)
+{
+refresh_adminets(button);
+}
+
+
+
+
+
+void
+on_refreshdoccreate_clicked            (GtkButton       *button,
+                                        gpointer         user_data)
+{
+refresh_doctor(button);
+}
+
+
+void
+on_refreshdocmod_clicked               (GtkButton       *button,
+                                        gpointer         user_data)
+{
+refresh_doctor(button);
+}
+
+
+void
+on_refreshdocdel_clicked               (GtkButton       *button,
+                                        gpointer         user_data)
+{
+refresh_doctor(button);
+}
+
+
+void
+on_refreshdocstat_clicked              (GtkButton       *button,
+                                        gpointer         user_data)
+{
+refresh_doctor(button);
+}
+
+
+void
+on_Refreshdonorbook_clicked            (GtkButton       *button,
+                                        gpointer         user_data)
+{
+refresh_donor(button);
+}
+
+
+void
+on_refreshdiradd_clicked               (GtkButton       *button,
+                                        gpointer         user_data)
+{
+refresh_director(button);
+}
+void
+on_refreshdirupdate_clicked            (GtkButton       *button,
+                                        gpointer         user_data)
+{
+refresh_director(button);
+}
+
+
+void
+on_refreshdirdelete_clicked            (GtkButton       *button,
+                                        gpointer         user_data)
+{
+refresh_director(button);
+}
