@@ -102,6 +102,8 @@ void UserRole(char file[],int role)
 	   {comp=2;}
 	if(strcmp(p.role,"Nurse")==0)
 	   {comp=3;}
+	if(strcmp(p.role,"Director")==0)
+	   {comp=4;}
       if (role==comp)
         {  fprintf(f2,"%s %s %s %s %s %s %s %s %s %s %s %s %s %s %s \n",p.Name,p.Last_Name,p.Work_email,p.Account_Password,p.Confirm_Password,p.Gender,p.role,p.ID_Number,p.Phone_Number,p.Dayb,p.Monthb,p.Yearb,p.daye,p.monthe,p.yeare);
         }

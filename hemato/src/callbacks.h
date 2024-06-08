@@ -525,7 +525,7 @@ on_treeview_RDOC_row_activated         (GtkTreeView     *treeview,
                                         gpointer         user_data);
 
 void
-on_butlogout_RDOC_clicked              (GtkWidget       *objet_graphique,
+on_butlogout_RDOC_clicked              (GtkWidget       *button,
                                         gpointer         user_data);
 
 void
@@ -533,7 +533,7 @@ on_butrefresh_RDOC_clicked             (GtkWidget       *objet,
                                         gpointer         user_data);
 
 void
-on_butlogout_DDOC_clicked              (GtkWidget       *objet_graphique,
+on_butlogout_DDOC_clicked              (GtkWidget       *button,
                                         gpointer         user_data);
 
 void
@@ -572,4 +572,40 @@ on_button_log_in1_clicked              (GtkButton       *objet,
 
 void
 on_button_refresh_amin_clicked         (GtkWidget       *objet_graphique,
+                                        gpointer         user_data);
+
+void
+on_radiobuttonDIRusers_toggled         (GtkToggleButton *togglebutton,
+                                        gpointer         user_data);
+
+void
+on_logout_amin1_clicked                (GtkButton       *button,
+                                        gpointer         user_data);
+
+void
+on_logout_amin2_clicked                (GtkButton       *button,
+                                        gpointer         user_data);
+
+void
+on_logout_amin3_clicked                (GtkButton       *button,
+                                        gpointer         user_data);
+
+void
+on_logout_amin4_clicked                (GtkButton       *button,
+                                        gpointer         user_data);
+
+void
+on_logout_amin5_clicked                (GtkButton       *button,
+                                        gpointer         user_data);
+
+void
+on_logout_amin6_clicked                (GtkButton       *button,
+                                        gpointer         user_data);
+
+void
+on_logout_amin7_clicked                (GtkButton       *button,
+                                        gpointer         user_data);
+
+void
+on_butlogout_SDOC_clicked              (GtkButton       *button,
                                         gpointer         user_data);

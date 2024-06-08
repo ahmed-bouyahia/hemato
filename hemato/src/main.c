@@ -11,11 +11,11 @@
 
 #include "interface.h"
 #include "support.h"
-
+	GtkWidget *homepage;
 int
 main (int argc, char *argv[])
 {
-  GtkWidget *homepage;
+
   GtkWidget *appointement;
   GtkWidget *admin;
   GtkWidget *window_gestionfiche;

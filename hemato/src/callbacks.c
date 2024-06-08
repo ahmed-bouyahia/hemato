@@ -9,6 +9,13 @@
 #include "support.h"
 #include "users.h"
 #include "function.h"
+
+extern GtkWidget *homepage;
+
+void show_homepage(GtkWidget *current_window) {
+    gtk_widget_hide(current_window);
+    gtk_widget_show(homepage);
+}
 ////////////ahmed///////////////
 int choixurgdirector=1;
 int id_found_mod_director;
@@ -108,7 +115,8 @@ void
 on_log_out_book_rdv_clicked            (GtkButton       *button,
                                         gpointer         user_data)
 {
-
+    GtkWidget *current_window = gtk_widget_get_toplevel(GTK_WIDGET(button));
+    show_homepage(current_window);
 }
 
 
@@ -306,7 +314,8 @@ void
 on_log_out_show_rdv_clicked            (GtkButton       *button,
                                         gpointer         user_data)
 {
-
+    GtkWidget *current_window = gtk_widget_get_toplevel(GTK_WIDGET(button));
+    show_homepage(current_window);
 }
 
 
@@ -327,7 +336,8 @@ void
 on_log_out_modify_rdv_clicked          (GtkButton       *button,
                                         gpointer         user_data)
 {
-
+    GtkWidget *current_window = gtk_widget_get_toplevel(GTK_WIDGET(button));
+    show_homepage(current_window);
 }
 
 
@@ -494,7 +504,8 @@ void
 on_log_out_cancel_rdv_clicked          (GtkButton       *button,
                                         gpointer         user_data)
 {
-
+    GtkWidget *current_window = gtk_widget_get_toplevel(GTK_WIDGET(button));
+    show_homepage(current_window);
 }
 
 
@@ -634,7 +645,8 @@ void
 on_log_out_history_rdv_clicked         (GtkButton       *button,
                                         gpointer         user_data)
 {
-
+    GtkWidget *current_window = gtk_widget_get_toplevel(GTK_WIDGET(button));
+    show_homepage(current_window);
 }
 
 
@@ -685,7 +697,7 @@ void on_buttoncreateusers_clicked(GtkWidget *objet_graphique, gpointer user_data
     input4 = lookup_widget(objet_graphique, "entryphoneusers");
     input5 = lookup_widget(objet_graphique, "spinbuttondaybusers");
     input6 = lookup_widget(objet_graphique, "spinbuttonmonthbusers");
-    input7 = lookup_widget(objet_graphique, "entry26");
+    input7 = lookup_widget(objet_graphique, "entryyearbusers");
     input8 = lookup_widget(objet_graphique, "entryemailusers");
     input9 = lookup_widget(objet_graphique, "entrypasswordusers");
     input10 = lookup_widget(objet_graphique, "entryconpassusers");
@@ -755,7 +767,8 @@ void
 on_buttonlogoutCusers_clicked          (GtkButton       *button,
                                         gpointer         user_data)
 {
-
+    GtkWidget *current_window = gtk_widget_get_toplevel(GTK_WIDGET(button));
+    show_homepage(current_window);
 }
 
 
@@ -773,7 +786,8 @@ void
 on_buttonlogoutRusers_clicked          (GtkButton       *button,
                                         gpointer         user_data)
 {
-
+    GtkWidget *current_window = gtk_widget_get_toplevel(GTK_WIDGET(button));
+    show_homepage(current_window);
 }
 
 ///readyahya
@@ -818,7 +832,8 @@ void
 on_buttonlogoutUusers_clicked          (GtkButton       *button,
                                         gpointer         user_data)
 {
-
+    GtkWidget *current_window = gtk_widget_get_toplevel(GTK_WIDGET(button));
+    show_homepage(current_window);
 }
 
 
@@ -1024,7 +1039,8 @@ void
 on_buttonlogoutDusers_clicked          (GtkButton       *button,
                                         gpointer         user_data)
 {
-
+    GtkWidget *current_window = gtk_widget_get_toplevel(GTK_WIDGET(button));
+    show_homepage(current_window);
 }
 
 
@@ -1181,7 +1197,8 @@ void
 on_buttonlogoutSusers_clicked          (GtkButton       *button,
                                         gpointer         user_data)
 {
-
+    GtkWidget *current_window = gtk_widget_get_toplevel(GTK_WIDGET(button));
+    show_homepage(current_window);
 }
 
 
@@ -1209,6 +1226,10 @@ show_table_role(treeview2);}
 if(rolest==3)
 {UserRole("users.txt",rolest);
 show_table_role(treeview2);}
+if(rolest==4)
+{UserRole("users.txt",rolest);
+show_table_role(treeview2);}
+
 M=pourcentageUSermale("users.txt",nm);
 F=pourcentageUSerfemale("users.txt",nf);
 sprintf(Fstr,"%d",F);
@@ -1737,7 +1758,8 @@ void
 on_Hist_logout_clicked                 (GtkButton       *button,
                                         gpointer         user_data)
 {
-
+    GtkWidget *current_window = gtk_widget_get_toplevel(GTK_WIDGET(button));
+    show_homepage(current_window);
 }
 
 
@@ -2399,7 +2421,8 @@ void
 on_buttonlogoutdirector_add_clicked    (GtkButton       *button,
                                         gpointer         user_data)
 {
-
+    GtkWidget *current_window = gtk_widget_get_toplevel(GTK_WIDGET(button));
+    show_homepage(current_window);
 }
 
 
@@ -2470,7 +2493,8 @@ void
 on_buttonlogoutdirector_show_clicked   (GtkButton       *button,
                                         gpointer         user_data)
 {
-
+    GtkWidget *current_window = gtk_widget_get_toplevel(GTK_WIDGET(button));
+    show_homepage(current_window);
 }
 
 
@@ -2602,7 +2626,8 @@ void
 on_buttonlogoutdirector_mod_clicked    (GtkButton       *button,
                                         gpointer         user_data)
 {
-
+    GtkWidget *current_window = gtk_widget_get_toplevel(GTK_WIDGET(button));
+    show_homepage(current_window);
 }
 
 
@@ -2787,7 +2812,8 @@ void
 on_buttonlogoutdirector_del_clicked    (GtkButton       *button,
                                         gpointer         user_data)
 {
-
+    GtkWidget *current_window = gtk_widget_get_toplevel(GTK_WIDGET(button));
+    show_homepage(current_window);
 }
 
 
@@ -2893,7 +2919,8 @@ void
 on_butlogout_CDOC_clicked              (GtkButton       *button,
                                         gpointer         user_data)
 {
-
+    GtkWidget *current_window = gtk_widget_get_toplevel(GTK_WIDGET(button));
+    show_homepage(current_window);
 }
 
 
@@ -3005,7 +3032,8 @@ void
 on_butlogout_MDOC_clicked              (GtkButton       *button,
                                         gpointer         user_data)
 {
-
+    GtkWidget *current_window = gtk_widget_get_toplevel(GTK_WIDGET(button));
+    show_homepage(current_window);
 }
 
 
@@ -3089,10 +3117,11 @@ GtkTreeIter iter;
 
 
 void
-on_butlogout_RDOC_clicked              (GtkWidget       *objet_graphique,
+on_butlogout_RDOC_clicked              (GtkWidget       *button,
                                         gpointer         user_data)
 {
-
+    GtkWidget *current_window = gtk_widget_get_toplevel(GTK_WIDGET(button));
+    show_homepage(current_window);
 }
 
 
@@ -3107,10 +3136,11 @@ GtkWidget *treeview1;
 
 
 void
-on_butlogout_DDOC_clicked              (GtkWidget       *objet_graphique,
+on_butlogout_DDOC_clicked              (GtkWidget       *button,
                                         gpointer         user_data)
 {
-
+    GtkWidget *current_window = gtk_widget_get_toplevel(GTK_WIDGET(button));
+    show_homepage(current_window);
 }
 
 
@@ -3305,5 +3335,86 @@ on_button_refresh_amin_clicked         (GtkWidget       *objet_graphique,
 afficher_fichiers_his(treeview3);
 
 
+}
+
+
+void
+on_radiobuttonDIRusers_toggled         (GtkToggleButton *togglebutton,
+                                        gpointer         user_data)
+{
+   if(gtk_toggle_button_get_active(GTK_RADIO_BUTTON(togglebutton)))
+   	 rolest=4;
+}
+
+
+void
+on_logout_amin1_clicked                (GtkButton       *button,
+                                        gpointer         user_data)
+{
+    GtkWidget *current_window = gtk_widget_get_toplevel(GTK_WIDGET(button));
+    show_homepage(current_window);
+}
+
+
+void
+on_logout_amin2_clicked                (GtkButton       *button,
+                                        gpointer         user_data)
+{
+    GtkWidget *current_window = gtk_widget_get_toplevel(GTK_WIDGET(button));
+    show_homepage(current_window);
+}
+
+
+void
+on_logout_amin3_clicked                (GtkButton       *button,
+                                        gpointer         user_data)
+{
+    GtkWidget *current_window = gtk_widget_get_toplevel(GTK_WIDGET(button));
+    show_homepage(current_window);
+}
+
+
+void
+on_logout_amin4_clicked                (GtkButton       *button,
+                                        gpointer         user_data)
+{
+    GtkWidget *current_window = gtk_widget_get_toplevel(GTK_WIDGET(button));
+    show_homepage(current_window);
+}
+
+
+void
+on_logout_amin5_clicked                (GtkButton       *button,
+                                        gpointer         user_data)
+{
+    GtkWidget *current_window = gtk_widget_get_toplevel(GTK_WIDGET(button));
+    show_homepage(current_window);
+}
+
+
+void
+on_logout_amin6_clicked                (GtkButton       *button,
+                                        gpointer         user_data)
+{
+    GtkWidget *current_window = gtk_widget_get_toplevel(GTK_WIDGET(button));
+    show_homepage(current_window);
+}
+
+
+void
+on_logout_amin7_clicked                (GtkButton       *button,
+                                        gpointer         user_data)
+{
+    GtkWidget *current_window = gtk_widget_get_toplevel(GTK_WIDGET(button));
+    show_homepage(current_window);
+}
+
+
+void
+on_butlogout_SDOC_clicked              (GtkButton       *button,
+                                        gpointer         user_data)
+{
+    GtkWidget *current_window = gtk_widget_get_toplevel(GTK_WIDGET(button));
+    show_homepage(current_window);
 }
 

@@ -345,12 +345,12 @@ create_appointement (void)
   GtkWidget *label26;
   GtkWidget *msg_ajout;
   GtkWidget *label114;
+  GtkWidget *image373;
   GtkWidget *log_out_book_rdv;
   GtkWidget *alignment1;
   GtkWidget *hbox1;
   GtkWidget *image17;
   GtkWidget *label99;
-  GtkWidget *image373;
   GtkWidget *label19;
   GtkWidget *fixed7;
   GtkWidget *treeviewshow1;
@@ -408,13 +408,13 @@ create_appointement (void)
   GtkWidget *hbox6;
   GtkWidget *image22;
   GtkWidget *label104;
+  GtkWidget *label35;
+  GtkWidget *image360;
   GtkWidget *log_out_modify_rdv;
   GtkWidget *alignment7;
   GtkWidget *hbox7;
   GtkWidget *image23;
   GtkWidget *label105;
-  GtkWidget *label35;
-  GtkWidget *image360;
   GtkWidget *label21;
   GtkWidget *fixed5;
   GtkWidget *id_enter;
@@ -606,6 +606,11 @@ create_appointement (void)
   gtk_widget_set_size_request (label114, 104, 40);
   gtk_label_set_use_markup (GTK_LABEL (label114), TRUE);
 
+  image373 = create_pixmap (appointement, "book.jpg");
+  gtk_widget_show (image373);
+  gtk_fixed_put (GTK_FIXED (fixed6), image373, 936, 80);
+  gtk_widget_set_size_request (image373, 288, 304);
+
   log_out_book_rdv = gtk_button_new ();
   gtk_widget_show (log_out_book_rdv);
   gtk_fixed_put (GTK_FIXED (fixed6), log_out_book_rdv, 1200, 0);
@@ -626,11 +631,6 @@ create_appointement (void)
   label99 = gtk_label_new_with_mnemonic (_("  LOG OUT"));
   gtk_widget_show (label99);
   gtk_box_pack_start (GTK_BOX (hbox1), label99, FALSE, FALSE, 0);
-
-  image373 = create_pixmap (appointement, "book.jpg");
-  gtk_widget_show (image373);
-  gtk_fixed_put (GTK_FIXED (fixed6), image373, 936, 80);
-  gtk_widget_set_size_request (image373, 288, 304);
 
   label19 = gtk_label_new (_("<span font_size=\"xx-large\" color=\"#BE3144\" font_family=\"Courier New\"><i><b>BOOK</b></i></span>"));
   gtk_widget_show (label19);
@@ -893,6 +893,16 @@ create_appointement (void)
   gtk_widget_show (label104);
   gtk_box_pack_start (GTK_BOX (hbox6), label104, FALSE, FALSE, 0);
 
+  label35 = gtk_label_new (_("id appointement :"));
+  gtk_widget_show (label35);
+  gtk_fixed_put (GTK_FIXED (fixed8), label35, 440, 16);
+  gtk_widget_set_size_request (label35, 168, 56);
+
+  image360 = create_pixmap (appointement, "modify.jpg");
+  gtk_widget_show (image360);
+  gtk_fixed_put (GTK_FIXED (fixed8), image360, 888, 128);
+  gtk_widget_set_size_request (image360, 304, 304);
+
   log_out_modify_rdv = gtk_button_new ();
   gtk_widget_show (log_out_modify_rdv);
   gtk_fixed_put (GTK_FIXED (fixed8), log_out_modify_rdv, 1200, 0);
@@ -913,16 +923,6 @@ create_appointement (void)
   label105 = gtk_label_new_with_mnemonic (_("    LOG OUT"));
   gtk_widget_show (label105);
   gtk_box_pack_start (GTK_BOX (hbox7), label105, FALSE, FALSE, 0);
-
-  label35 = gtk_label_new (_("id appointement :"));
-  gtk_widget_show (label35);
-  gtk_fixed_put (GTK_FIXED (fixed8), label35, 440, 16);
-  gtk_widget_set_size_request (label35, 168, 56);
-
-  image360 = create_pixmap (appointement, "modify.jpg");
-  gtk_widget_show (image360);
-  gtk_fixed_put (GTK_FIXED (fixed8), image360, 888, 128);
-  gtk_widget_set_size_request (image360, 304, 304);
 
   label21 = gtk_label_new (_("<span font_size=\"xx-large\" color=\"#BE3144\" font_family=\"Courier New\"><i><b>CHANGE</b></i></span>"));
   gtk_widget_show (label21);
@@ -1277,12 +1277,12 @@ create_appointement (void)
   GLADE_HOOKUP_OBJECT (appointement, label26, "label26");
   GLADE_HOOKUP_OBJECT (appointement, msg_ajout, "msg_ajout");
   GLADE_HOOKUP_OBJECT (appointement, label114, "label114");
+  GLADE_HOOKUP_OBJECT (appointement, image373, "image373");
   GLADE_HOOKUP_OBJECT (appointement, log_out_book_rdv, "log_out_book_rdv");
   GLADE_HOOKUP_OBJECT (appointement, alignment1, "alignment1");
   GLADE_HOOKUP_OBJECT (appointement, hbox1, "hbox1");
   GLADE_HOOKUP_OBJECT (appointement, image17, "image17");
   GLADE_HOOKUP_OBJECT (appointement, label99, "label99");
-  GLADE_HOOKUP_OBJECT (appointement, image373, "image373");
   GLADE_HOOKUP_OBJECT (appointement, label19, "label19");
   GLADE_HOOKUP_OBJECT (appointement, fixed7, "fixed7");
   GLADE_HOOKUP_OBJECT (appointement, treeviewshow1, "treeviewshow1");
@@ -1337,13 +1337,13 @@ create_appointement (void)
   GLADE_HOOKUP_OBJECT (appointement, hbox6, "hbox6");
   GLADE_HOOKUP_OBJECT (appointement, image22, "image22");
   GLADE_HOOKUP_OBJECT (appointement, label104, "label104");
+  GLADE_HOOKUP_OBJECT (appointement, label35, "label35");
+  GLADE_HOOKUP_OBJECT (appointement, image360, "image360");
   GLADE_HOOKUP_OBJECT (appointement, log_out_modify_rdv, "log_out_modify_rdv");
   GLADE_HOOKUP_OBJECT (appointement, alignment7, "alignment7");
   GLADE_HOOKUP_OBJECT (appointement, hbox7, "hbox7");
   GLADE_HOOKUP_OBJECT (appointement, image23, "image23");
   GLADE_HOOKUP_OBJECT (appointement, label105, "label105");
-  GLADE_HOOKUP_OBJECT (appointement, label35, "label35");
-  GLADE_HOOKUP_OBJECT (appointement, image360, "image360");
   GLADE_HOOKUP_OBJECT (appointement, label21, "label21");
   GLADE_HOOKUP_OBJECT (appointement, fixed5, "fixed5");
   GLADE_HOOKUP_OBJECT (appointement, id_enter, "id_enter");
@@ -1439,17 +1439,14 @@ create_admin (void)
   GtkWidget *emailusers;
   GtkWidget *Passwordusers;
   GtkWidget *confirmpasswordusers;
-  GtkWidget *dateofentryusers;
   GtkWidget *dayofentryusers;
   GtkWidget *monthofentryusers;
-  GtkWidget *yearofenrtyusers;
   GtkWidget *genderusers;
   GtkWidget *Roleusers;
   GtkWidget *radiobuttonfemaleusers;
   GSList *radiobuttonfemaleusers_group = NULL;
   GtkWidget *radiobuttonmaleusers;
-  GtkWidget *comboboxroleusers;
-  GtkWidget *entry26;
+  GtkWidget *entryyearbusers;
   GtkWidget *entryyeareusers;
   GtkWidget *buttoncreateusers;
   GtkWidget *alignment1;
@@ -1463,6 +1460,9 @@ create_admin (void)
   GtkWidget *image9;
   GtkWidget *label83;
   GtkWidget *image364;
+  GtkWidget *dateofentryusers;
+  GtkWidget *yearofenrtyusers;
+  GtkWidget *comboboxroleusers;
   GtkWidget *create_users;
   GtkWidget *read_fix_users;
   GtkWidget *treeviewreadusers;
@@ -1518,7 +1518,6 @@ create_admin (void)
   GtkWidget *image10;
   GtkWidget *label84;
   GtkWidget *succupdateusers;
-  GtkWidget *comboboxuproleusers;
   GtkWidget *updateyearusers;
   GtkWidget *entry29;
   GtkWidget *entryUPyeareusers;
@@ -1542,6 +1541,7 @@ create_admin (void)
   GtkWidget *image13;
   GtkWidget *label87;
   GtkWidget *image375;
+  GtkWidget *comboboxuproleusers;
   GtkWidget *update_users;
   GtkWidget *fixed40;
   GtkWidget *entryIDdlusers;
@@ -1590,8 +1590,6 @@ create_admin (void)
   GtkWidget *fixed31;
   GtkWidget *treeviewroleusers;
   GtkWidget *filterusers;
-  GtkWidget *radiobuttonDOCusers;
-  GSList *radiobuttonDOCusers_group = NULL;
   GtkWidget *statmaleusers;
   GtkWidget *statfemaleusers;
   GtkWidget *buttonshowstatusers;
@@ -1599,14 +1597,17 @@ create_admin (void)
   GtkWidget *hbox3;
   GtkWidget *image4;
   GtkWidget *label77;
-  GtkWidget *radiobuttonNURusers;
-  GtkWidget *radiobuttonADusers;
   GtkWidget *buttonlogoutSusers;
   GtkWidget *alignment14;
   GtkWidget *hbox14;
   GtkWidget *image15;
   GtkWidget *label89;
   GtkWidget *image377;
+  GtkWidget *radiobuttonDOCusers;
+  GSList *radiobuttonDOCusers_group = NULL;
+  GtkWidget *radiobuttonNURusers;
+  GtkWidget *radiobuttonADusers;
+  GtkWidget *DIRusers;
   GtkWidget *stat_users;
   GtkWidget *user;
   GtkWidget *notebook7;
@@ -1648,13 +1649,13 @@ create_admin (void)
   GtkWidget *hbox17;
   GtkWidget *image18;
   GtkWidget *label92;
+  GtkWidget *image378;
+  GtkWidget *successamin;
   GtkWidget *logout_amin1;
   GtkWidget *alignment18;
   GtkWidget *hbox18;
   GtkWidget *image19;
   GtkWidget *label93;
-  GtkWidget *image378;
-  GtkWidget *successamin;
   GtkWidget *create_label_amin;
   GtkWidget *fixed32;
   GtkWidget *treeview4;
@@ -1663,12 +1664,12 @@ create_admin (void)
   GtkWidget *hbox25;
   GtkWidget *image26;
   GtkWidget *label100;
+  GtkWidget *image379;
   GtkWidget *logout_amin2;
   GtkWidget *alignment22;
   GtkWidget *hbox22;
   GtkWidget *image23;
   GtkWidget *label97;
-  GtkWidget *image379;
   GtkWidget *read_label_amin;
   GtkWidget *fixed11;
   GtkWidget *fixed33;
@@ -1731,12 +1732,12 @@ create_admin (void)
   GtkWidget *label158;
   GtkWidget *label159;
   GtkWidget *combobox_state_amin2;
+  GtkWidget *label148;
   GtkWidget *logout_amin3;
   GtkWidget *alignment23;
   GtkWidget *hbox23;
   GtkWidget *image24;
   GtkWidget *label98;
-  GtkWidget *label148;
   GtkWidget *update_label_amin;
   GtkWidget *fixed36;
   GtkWidget *entry24;
@@ -1808,12 +1809,12 @@ create_admin (void)
   GtkWidget *labeladminets;
   GtkWidget *fixed37;
   GtkWidget *treeview1;
+  GtkWidget *buttonrefreshamin;
   GtkWidget *logout_amin7;
   GtkWidget *alignment20;
   GtkWidget *hbox20;
   GtkWidget *image21;
   GtkWidget *label95;
-  GtkWidget *buttonrefreshamin;
   GtkWidget *labeladminetshistory;
   GtkWidget *ets;
   GtkWidget *label157;
@@ -1970,11 +1971,6 @@ create_admin (void)
   gtk_fixed_put (GTK_FIXED (create_fix_users), confirmpasswordusers, 608, 208);
   gtk_widget_set_size_request (confirmpasswordusers, 168, 16);
 
-  dateofentryusers = gtk_label_new (_("Date of entry:"));
-  gtk_widget_show (dateofentryusers);
-  gtk_fixed_put (GTK_FIXED (create_fix_users), dateofentryusers, 608, 264);
-  gtk_widget_set_size_request (dateofentryusers, 144, 32);
-
   dayofentryusers = gtk_label_new (_("Day:"));
   gtk_widget_show (dayofentryusers);
   gtk_fixed_put (GTK_FIXED (create_fix_users), dayofentryusers, 592, 304);
@@ -1984,11 +1980,6 @@ create_admin (void)
   gtk_widget_show (monthofentryusers);
   gtk_fixed_put (GTK_FIXED (create_fix_users), monthofentryusers, 704, 304);
   gtk_widget_set_size_request (monthofentryusers, 49, 17);
-
-  yearofenrtyusers = gtk_label_new (_("Year:"));
-  gtk_widget_show (yearofenrtyusers);
-  gtk_fixed_put (GTK_FIXED (create_fix_users), yearofenrtyusers, 832, 304);
-  gtk_widget_set_size_request (yearofenrtyusers, 49, 17);
 
   genderusers = gtk_label_new (_("Gender:"));
   gtk_widget_show (genderusers);
@@ -2014,19 +2005,11 @@ create_admin (void)
   gtk_radio_button_set_group (GTK_RADIO_BUTTON (radiobuttonmaleusers), radiobuttonfemaleusers_group);
   radiobuttonfemaleusers_group = gtk_radio_button_get_group (GTK_RADIO_BUTTON (radiobuttonmaleusers));
 
-  comboboxroleusers = gtk_combo_box_new_text ();
-  gtk_widget_show (comboboxroleusers);
-  gtk_fixed_put (GTK_FIXED (create_fix_users), comboboxroleusers, 632, 440);
-  gtk_widget_set_size_request (comboboxroleusers, 150, 35);
-  gtk_combo_box_append_text (GTK_COMBO_BOX (comboboxroleusers), _("Admin"));
-  gtk_combo_box_append_text (GTK_COMBO_BOX (comboboxroleusers), _("Doctor"));
-  gtk_combo_box_append_text (GTK_COMBO_BOX (comboboxroleusers), _("Nurse"));
-
-  entry26 = gtk_entry_new ();
-  gtk_widget_show (entry26);
-  gtk_fixed_put (GTK_FIXED (create_fix_users), entry26, 336, 376);
-  gtk_widget_set_size_request (entry26, 90, 30);
-  gtk_entry_set_invisible_char (GTK_ENTRY (entry26), 8226);
+  entryyearbusers = gtk_entry_new ();
+  gtk_widget_show (entryyearbusers);
+  gtk_fixed_put (GTK_FIXED (create_fix_users), entryyearbusers, 336, 376);
+  gtk_widget_set_size_request (entryyearbusers, 90, 30);
+  gtk_entry_set_invisible_char (GTK_ENTRY (entryyearbusers), 8226);
 
   entryyeareusers = gtk_entry_new ();
   gtk_widget_show (entryyeareusers);
@@ -2085,6 +2068,25 @@ create_admin (void)
   gtk_widget_show (image364);
   gtk_fixed_put (GTK_FIXED (create_fix_users), image364, 1288, 144);
   gtk_widget_set_size_request (image364, 304, 272);
+
+  dateofentryusers = gtk_label_new (_("Date of entry:"));
+  gtk_widget_show (dateofentryusers);
+  gtk_fixed_put (GTK_FIXED (create_fix_users), dateofentryusers, 608, 264);
+  gtk_widget_set_size_request (dateofentryusers, 144, 32);
+
+  yearofenrtyusers = gtk_label_new (_("Year:"));
+  gtk_widget_show (yearofenrtyusers);
+  gtk_fixed_put (GTK_FIXED (create_fix_users), yearofenrtyusers, 832, 304);
+  gtk_widget_set_size_request (yearofenrtyusers, 49, 17);
+
+  comboboxroleusers = gtk_combo_box_new_text ();
+  gtk_widget_show (comboboxroleusers);
+  gtk_fixed_put (GTK_FIXED (create_fix_users), comboboxroleusers, 632, 440);
+  gtk_widget_set_size_request (comboboxroleusers, 150, 35);
+  gtk_combo_box_append_text (GTK_COMBO_BOX (comboboxroleusers), _("Admin"));
+  gtk_combo_box_append_text (GTK_COMBO_BOX (comboboxroleusers), _("Doctor"));
+  gtk_combo_box_append_text (GTK_COMBO_BOX (comboboxroleusers), _("Nurse"));
+  gtk_combo_box_append_text (GTK_COMBO_BOX (comboboxroleusers), _("Director"));
 
   create_users = gtk_label_new (_(" <span font_size=\"xx-large\" color=\"#BE3144\" font_family=\"Courier New\"><i><b>CREATE</b></i></span>"));
   gtk_widget_show (create_users);
@@ -2354,14 +2356,6 @@ create_admin (void)
   gtk_fixed_put (GTK_FIXED (update_fix_users), succupdateusers, 112, 568);
   gtk_widget_set_size_request (succupdateusers, 700, 30);
 
-  comboboxuproleusers = gtk_combo_box_new_text ();
-  gtk_widget_show (comboboxuproleusers);
-  gtk_fixed_put (GTK_FIXED (update_fix_users), comboboxuproleusers, 624, 448);
-  gtk_widget_set_size_request (comboboxuproleusers, 150, 35);
-  gtk_combo_box_append_text (GTK_COMBO_BOX (comboboxuproleusers), _("Admin"));
-  gtk_combo_box_append_text (GTK_COMBO_BOX (comboboxuproleusers), _("Doctor"));
-  gtk_combo_box_append_text (GTK_COMBO_BOX (comboboxuproleusers), _("Nurse"));
-
   updateyearusers = gtk_label_new (_("Year:"));
   gtk_widget_show (updateyearusers);
   gtk_fixed_put (GTK_FIXED (update_fix_users), updateyearusers, 304, 400);
@@ -2471,6 +2465,15 @@ create_admin (void)
   gtk_widget_show (image375);
   gtk_fixed_put (GTK_FIXED (update_fix_users), image375, 1288, 144);
   gtk_widget_set_size_request (image375, 304, 272);
+
+  comboboxuproleusers = gtk_combo_box_new_text ();
+  gtk_widget_show (comboboxuproleusers);
+  gtk_fixed_put (GTK_FIXED (update_fix_users), comboboxuproleusers, 624, 448);
+  gtk_widget_set_size_request (comboboxuproleusers, 150, 35);
+  gtk_combo_box_append_text (GTK_COMBO_BOX (comboboxuproleusers), _("Admin"));
+  gtk_combo_box_append_text (GTK_COMBO_BOX (comboboxuproleusers), _("Doctor"));
+  gtk_combo_box_append_text (GTK_COMBO_BOX (comboboxuproleusers), _("Nurse"));
+  gtk_combo_box_append_text (GTK_COMBO_BOX (comboboxuproleusers), _("Director"));
 
   update_users = gtk_label_new (_(" <span font_size=\"xx-large\" color=\"#BE3144\" font_family=\"Courier New\"><i><b>UPDATE</b></i></span>"));
   gtk_widget_show (update_users);
@@ -2717,13 +2720,6 @@ create_admin (void)
   gtk_fixed_put (GTK_FIXED (fixed31), filterusers, 16, 112);
   gtk_widget_set_size_request (filterusers, 120, 30);
 
-  radiobuttonDOCusers = gtk_radio_button_new_with_mnemonic (NULL, _("Doctor"));
-  gtk_widget_show (radiobuttonDOCusers);
-  gtk_fixed_put (GTK_FIXED (fixed31), radiobuttonDOCusers, 170, 150);
-  gtk_widget_set_size_request (radiobuttonDOCusers, 110, 30);
-  gtk_radio_button_set_group (GTK_RADIO_BUTTON (radiobuttonDOCusers), radiobuttonDOCusers_group);
-  radiobuttonDOCusers_group = gtk_radio_button_get_group (GTK_RADIO_BUTTON (radiobuttonDOCusers));
-
   statmaleusers = gtk_label_new (_("Staff Male Number:"));
   gtk_widget_show (statmaleusers);
   gtk_fixed_put (GTK_FIXED (fixed31), statmaleusers, 16, 40);
@@ -2757,21 +2753,6 @@ create_admin (void)
   gtk_widget_show (label77);
   gtk_box_pack_start (GTK_BOX (hbox3), label77, FALSE, FALSE, 0);
 
-  radiobuttonNURusers = gtk_radio_button_new_with_mnemonic (NULL, _("Nurse"));
-  gtk_widget_show (radiobuttonNURusers);
-  gtk_fixed_put (GTK_FIXED (fixed31), radiobuttonNURusers, 304, 150);
-  gtk_widget_set_size_request (radiobuttonNURusers, 110, 30);
-  gtk_radio_button_set_group (GTK_RADIO_BUTTON (radiobuttonNURusers), radiobuttonDOCusers_group);
-  radiobuttonDOCusers_group = gtk_radio_button_get_group (GTK_RADIO_BUTTON (radiobuttonNURusers));
-
-  radiobuttonADusers = gtk_radio_button_new_with_mnemonic (NULL, _("Admin"));
-  gtk_widget_show (radiobuttonADusers);
-  gtk_fixed_put (GTK_FIXED (fixed31), radiobuttonADusers, 40, 150);
-  gtk_widget_set_size_request (radiobuttonADusers, 110, 30);
-  gtk_radio_button_set_group (GTK_RADIO_BUTTON (radiobuttonADusers), radiobuttonDOCusers_group);
-  radiobuttonDOCusers_group = gtk_radio_button_get_group (GTK_RADIO_BUTTON (radiobuttonADusers));
-  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (radiobuttonADusers), TRUE);
-
   buttonlogoutSusers = gtk_button_new ();
   gtk_widget_show (buttonlogoutSusers);
   gtk_fixed_put (GTK_FIXED (fixed31), buttonlogoutSusers, 1250, 60);
@@ -2797,6 +2778,35 @@ create_admin (void)
   gtk_widget_show (image377);
   gtk_fixed_put (GTK_FIXED (fixed31), image377, 1288, 144);
   gtk_widget_set_size_request (image377, 304, 272);
+
+  radiobuttonDOCusers = gtk_radio_button_new_with_mnemonic (NULL, _("Doctor"));
+  gtk_widget_show (radiobuttonDOCusers);
+  gtk_fixed_put (GTK_FIXED (fixed31), radiobuttonDOCusers, 170, 150);
+  gtk_widget_set_size_request (radiobuttonDOCusers, 110, 30);
+  gtk_radio_button_set_group (GTK_RADIO_BUTTON (radiobuttonDOCusers), radiobuttonDOCusers_group);
+  radiobuttonDOCusers_group = gtk_radio_button_get_group (GTK_RADIO_BUTTON (radiobuttonDOCusers));
+
+  radiobuttonNURusers = gtk_radio_button_new_with_mnemonic (NULL, _("Nurse"));
+  gtk_widget_show (radiobuttonNURusers);
+  gtk_fixed_put (GTK_FIXED (fixed31), radiobuttonNURusers, 304, 150);
+  gtk_widget_set_size_request (radiobuttonNURusers, 110, 30);
+  gtk_radio_button_set_group (GTK_RADIO_BUTTON (radiobuttonNURusers), radiobuttonDOCusers_group);
+  radiobuttonDOCusers_group = gtk_radio_button_get_group (GTK_RADIO_BUTTON (radiobuttonNURusers));
+
+  radiobuttonADusers = gtk_radio_button_new_with_mnemonic (NULL, _("Admin"));
+  gtk_widget_show (radiobuttonADusers);
+  gtk_fixed_put (GTK_FIXED (fixed31), radiobuttonADusers, 40, 150);
+  gtk_widget_set_size_request (radiobuttonADusers, 110, 30);
+  gtk_radio_button_set_group (GTK_RADIO_BUTTON (radiobuttonADusers), radiobuttonDOCusers_group);
+  radiobuttonDOCusers_group = gtk_radio_button_get_group (GTK_RADIO_BUTTON (radiobuttonADusers));
+  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (radiobuttonADusers), TRUE);
+
+  DIRusers = gtk_radio_button_new_with_mnemonic (NULL, _("Director"));
+  gtk_widget_show (DIRusers);
+  gtk_fixed_put (GTK_FIXED (fixed31), DIRusers, 400, 150);
+  gtk_widget_set_size_request (DIRusers, 110, 30);
+  gtk_radio_button_set_group (GTK_RADIO_BUTTON (DIRusers), radiobuttonDOCusers_group);
+  radiobuttonDOCusers_group = gtk_radio_button_get_group (GTK_RADIO_BUTTON (DIRusers));
 
   stat_users = gtk_label_new (_(" <span font_size=\"xx-large\" color=\"#BE3144\" font_family=\"Courier New\"><i><b>STATISTICS</b></i></span>"));
   gtk_widget_show (stat_users);
@@ -2994,6 +3004,16 @@ create_admin (void)
   gtk_widget_show (label92);
   gtk_box_pack_start (GTK_BOX (hbox17), label92, FALSE, FALSE, 0);
 
+  image378 = create_pixmap (admin, "yahya.jpg");
+  gtk_widget_show (image378);
+  gtk_fixed_put (GTK_FIXED (fixed9), image378, 1288, 144);
+  gtk_widget_set_size_request (image378, 304, 272);
+
+  successamin = gtk_label_new ("");
+  gtk_widget_show (successamin);
+  gtk_fixed_put (GTK_FIXED (fixed9), successamin, 728, 640);
+  gtk_widget_set_size_request (successamin, 320, 80);
+
   logout_amin1 = gtk_button_new ();
   gtk_widget_show (logout_amin1);
   gtk_fixed_put (GTK_FIXED (fixed9), logout_amin1, 1456, 8);
@@ -3014,16 +3034,6 @@ create_admin (void)
   label93 = gtk_label_new_with_mnemonic (_("Log out"));
   gtk_widget_show (label93);
   gtk_box_pack_start (GTK_BOX (hbox18), label93, FALSE, FALSE, 0);
-
-  image378 = create_pixmap (admin, "yahya.jpg");
-  gtk_widget_show (image378);
-  gtk_fixed_put (GTK_FIXED (fixed9), image378, 1288, 144);
-  gtk_widget_set_size_request (image378, 304, 272);
-
-  successamin = gtk_label_new ("");
-  gtk_widget_show (successamin);
-  gtk_fixed_put (GTK_FIXED (fixed9), successamin, 728, 640);
-  gtk_widget_set_size_request (successamin, 320, 80);
 
   create_label_amin = gtk_label_new (_(" <span font_size=\"xx-large\" color=\"#BE3144\" font_family=\"Courier New\"><i><b>CREATE</b></i></span>"));
   gtk_widget_show (create_label_amin);
@@ -3062,6 +3072,11 @@ create_admin (void)
   gtk_widget_show (label100);
   gtk_box_pack_start (GTK_BOX (hbox25), label100, FALSE, FALSE, 0);
 
+  image379 = create_pixmap (admin, "yahya.jpg");
+  gtk_widget_show (image379);
+  gtk_fixed_put (GTK_FIXED (fixed32), image379, 1424, 144);
+  gtk_widget_set_size_request (image379, 304, 272);
+
   logout_amin2 = gtk_button_new ();
   gtk_widget_show (logout_amin2);
   gtk_fixed_put (GTK_FIXED (fixed32), logout_amin2, 1456, 8);
@@ -3082,11 +3097,6 @@ create_admin (void)
   label97 = gtk_label_new_with_mnemonic (_("Log out"));
   gtk_widget_show (label97);
   gtk_box_pack_start (GTK_BOX (hbox22), label97, FALSE, FALSE, 0);
-
-  image379 = create_pixmap (admin, "yahya.jpg");
-  gtk_widget_show (image379);
-  gtk_fixed_put (GTK_FIXED (fixed32), image379, 1424, 144);
-  gtk_widget_set_size_request (image379, 304, 272);
 
   read_label_amin = gtk_label_new (_(" <span font_size=\"xx-large\" color=\"#BE3144\" font_family=\"Courier New\"><i><b>READ</b></i></span>"));
   gtk_widget_show (read_label_amin);
@@ -3381,6 +3391,11 @@ create_admin (void)
   gtk_combo_box_append_text (GTK_COMBO_BOX (combobox_state_amin2), _("      Beja"));
   gtk_combo_box_append_text (GTK_COMBO_BOX (combobox_state_amin2), _("      "));
 
+  label148 = gtk_label_new ("");
+  gtk_widget_show (label148);
+  gtk_fixed_put (GTK_FIXED (fixed11), label148, 728, 648);
+  gtk_widget_set_size_request (label148, 256, 72);
+
   logout_amin3 = gtk_button_new ();
   gtk_widget_show (logout_amin3);
   gtk_fixed_put (GTK_FIXED (fixed11), logout_amin3, 1456, 8);
@@ -3401,11 +3416,6 @@ create_admin (void)
   label98 = gtk_label_new_with_mnemonic (_("Log out"));
   gtk_widget_show (label98);
   gtk_box_pack_start (GTK_BOX (hbox23), label98, FALSE, FALSE, 0);
-
-  label148 = gtk_label_new ("");
-  gtk_widget_show (label148);
-  gtk_fixed_put (GTK_FIXED (fixed11), label148, 728, 648);
-  gtk_widget_set_size_request (label148, 256, 72);
 
   update_label_amin = gtk_label_new (_(" <span font_size=\"xx-large\" color=\"#BE3144\" font_family=\"Courier New\"><i><b>UPDATE</b></i></span>"));
   gtk_widget_show (update_label_amin);
@@ -3737,10 +3747,15 @@ create_admin (void)
   gtk_fixed_put (GTK_FIXED (fixed37), treeview1, 48, 112);
   gtk_widget_set_size_request (treeview1, 1360, 648);
 
+  buttonrefreshamin = gtk_button_new_with_mnemonic (_("Refresh"));
+  gtk_widget_show (buttonrefreshamin);
+  gtk_fixed_put (GTK_FIXED (fixed37), buttonrefreshamin, 1456, 352);
+  gtk_widget_set_size_request (buttonrefreshamin, 146, 77);
+
   logout_amin7 = gtk_button_new ();
   gtk_widget_show (logout_amin7);
   gtk_fixed_put (GTK_FIXED (fixed37), logout_amin7, 1456, 64);
-  gtk_widget_set_size_request (logout_amin7, 138, 72);
+  gtk_widget_set_size_request (logout_amin7, 138, 30);
 
   alignment20 = gtk_alignment_new (0.5, 0.5, 0, 0);
   gtk_widget_show (alignment20);
@@ -3750,18 +3765,13 @@ create_admin (void)
   gtk_widget_show (hbox20);
   gtk_container_add (GTK_CONTAINER (alignment20), hbox20);
 
-  image21 = gtk_image_new_from_stock ("gtk-close", GTK_ICON_SIZE_BUTTON);
+  image21 = gtk_image_new_from_stock ("gtk-quit", GTK_ICON_SIZE_BUTTON);
   gtk_widget_show (image21);
   gtk_box_pack_start (GTK_BOX (hbox20), image21, FALSE, FALSE, 0);
 
   label95 = gtk_label_new_with_mnemonic (_("Log out"));
   gtk_widget_show (label95);
   gtk_box_pack_start (GTK_BOX (hbox20), label95, FALSE, FALSE, 0);
-
-  buttonrefreshamin = gtk_button_new_with_mnemonic (_("Refresh"));
-  gtk_widget_show (buttonrefreshamin);
-  gtk_fixed_put (GTK_FIXED (fixed37), buttonrefreshamin, 1456, 352);
-  gtk_widget_set_size_request (buttonrefreshamin, 146, 77);
 
   labeladminetshistory = gtk_label_new (_(" <span font_size=\"xx-large\" color=\"#BE3144\" font_family=\"Courier New\"><i><b>HISTORY</b></i></span>"));
   gtk_widget_show (labeladminetshistory);
@@ -3832,11 +3842,14 @@ create_admin (void)
   g_signal_connect ((gpointer) treeviewroleusers, "row_activated",
                     G_CALLBACK (on_treeviewroleusers_row_activated),
                     NULL);
-  g_signal_connect ((gpointer) radiobuttonDOCusers, "toggled",
-                    G_CALLBACK (on_radiobuttonDOCusers_toggled),
-                    NULL);
   g_signal_connect ((gpointer) buttonshowstatusers, "clicked",
                     G_CALLBACK (on_buttonshowstatusers_clicked),
+                    NULL);
+  g_signal_connect ((gpointer) buttonlogoutSusers, "clicked",
+                    G_CALLBACK (on_buttonlogoutSusers_clicked),
+                    NULL);
+  g_signal_connect ((gpointer) radiobuttonDOCusers, "toggled",
+                    G_CALLBACK (on_radiobuttonDOCusers_toggled),
                     NULL);
   g_signal_connect ((gpointer) radiobuttonNURusers, "toggled",
                     G_CALLBACK (on_radiobuttonNURusers_toggled),
@@ -3844,8 +3857,8 @@ create_admin (void)
   g_signal_connect ((gpointer) radiobuttonADusers, "toggled",
                     G_CALLBACK (on_radiobuttonADusers_toggled),
                     NULL);
-  g_signal_connect ((gpointer) buttonlogoutSusers, "clicked",
-                    G_CALLBACK (on_buttonlogoutSusers_clicked),
+  g_signal_connect ((gpointer) DIRusers, "toggled",
+                    G_CALLBACK (on_radiobuttonDIRusers_toggled),
                     NULL);
   g_signal_connect ((gpointer) radiobutton_empty, "toggled",
                     G_CALLBACK (on_radiobutton_empty_toggled),
@@ -3859,8 +3872,14 @@ create_admin (void)
   g_signal_connect ((gpointer) create_button_amin1, "clicked",
                     G_CALLBACK (on_create_button_amin1_clicked),
                     NULL);
+  g_signal_connect ((gpointer) logout_amin1, "clicked",
+                    G_CALLBACK (on_logout_amin1_clicked),
+                    NULL);
   g_signal_connect ((gpointer) show_button_amin1, "clicked",
                     G_CALLBACK (on_show_button_amin1re_clicked),
+                    NULL);
+  g_signal_connect ((gpointer) logout_amin2, "clicked",
+                    G_CALLBACK (on_logout_amin2_clicked),
                     NULL);
   g_signal_connect ((gpointer) charcher_button_amin1, "clicked",
                     G_CALLBACK (on_charcher_button_amin1update_clicked),
@@ -3880,6 +3899,9 @@ create_admin (void)
   g_signal_connect ((gpointer) radiobutton_average2, "toggled",
                     G_CALLBACK (on_radiobutton_average2up_toggled),
                     NULL);
+  g_signal_connect ((gpointer) logout_amin3, "clicked",
+                    G_CALLBACK (on_logout_amin3_clicked),
+                    NULL);
   g_signal_connect ((gpointer) delete_search, "clicked",
                     G_CALLBACK (delete_search_clicked),
                     NULL);
@@ -3889,14 +3911,26 @@ create_admin (void)
   g_signal_connect ((gpointer) delete_button_amin1, "clicked",
                     G_CALLBACK (on_delete_button_am_clicked),
                     NULL);
+  g_signal_connect ((gpointer) logout_amin4, "clicked",
+                    G_CALLBACK (on_logout_amin4_clicked),
+                    NULL);
   g_signal_connect ((gpointer) capacity_show_button1, "clicked",
                     G_CALLBACK (on_capacity_show_button1cap_clicked),
+                    NULL);
+  g_signal_connect ((gpointer) logout_amin5, "clicked",
+                    G_CALLBACK (on_logout_amin5_clicked),
                     NULL);
   g_signal_connect ((gpointer) search222, "clicked",
                     G_CALLBACK (on_search222stat_clicked),
                     NULL);
+  g_signal_connect ((gpointer) logout_amin6, "clicked",
+                    G_CALLBACK (on_logout_amin6_clicked),
+                    NULL);
   g_signal_connect ((gpointer) buttonrefreshamin, "clicked",
                     G_CALLBACK (on_button_refresh_amin_clicked),
+                    NULL);
+  g_signal_connect ((gpointer) logout_amin7, "clicked",
+                    G_CALLBACK (on_logout_amin7_clicked),
                     NULL);
 
   gtk_label_set_mnemonic_widget (GTK_LABEL (emailusers), buttonlogoutCusers);
@@ -3930,16 +3964,13 @@ create_admin (void)
   GLADE_HOOKUP_OBJECT (admin, emailusers, "emailusers");
   GLADE_HOOKUP_OBJECT (admin, Passwordusers, "Passwordusers");
   GLADE_HOOKUP_OBJECT (admin, confirmpasswordusers, "confirmpasswordusers");
-  GLADE_HOOKUP_OBJECT (admin, dateofentryusers, "dateofentryusers");
   GLADE_HOOKUP_OBJECT (admin, dayofentryusers, "dayofentryusers");
   GLADE_HOOKUP_OBJECT (admin, monthofentryusers, "monthofentryusers");
-  GLADE_HOOKUP_OBJECT (admin, yearofenrtyusers, "yearofenrtyusers");
   GLADE_HOOKUP_OBJECT (admin, genderusers, "genderusers");
   GLADE_HOOKUP_OBJECT (admin, Roleusers, "Roleusers");
   GLADE_HOOKUP_OBJECT (admin, radiobuttonfemaleusers, "radiobuttonfemaleusers");
   GLADE_HOOKUP_OBJECT (admin, radiobuttonmaleusers, "radiobuttonmaleusers");
-  GLADE_HOOKUP_OBJECT (admin, comboboxroleusers, "comboboxroleusers");
-  GLADE_HOOKUP_OBJECT (admin, entry26, "entry26");
+  GLADE_HOOKUP_OBJECT (admin, entryyearbusers, "entryyearbusers");
   GLADE_HOOKUP_OBJECT (admin, entryyeareusers, "entryyeareusers");
   GLADE_HOOKUP_OBJECT (admin, buttoncreateusers, "buttoncreateusers");
   GLADE_HOOKUP_OBJECT (admin, alignment1, "alignment1");
@@ -3953,6 +3984,9 @@ create_admin (void)
   GLADE_HOOKUP_OBJECT (admin, image9, "image9");
   GLADE_HOOKUP_OBJECT (admin, label83, "label83");
   GLADE_HOOKUP_OBJECT (admin, image364, "image364");
+  GLADE_HOOKUP_OBJECT (admin, dateofentryusers, "dateofentryusers");
+  GLADE_HOOKUP_OBJECT (admin, yearofenrtyusers, "yearofenrtyusers");
+  GLADE_HOOKUP_OBJECT (admin, comboboxroleusers, "comboboxroleusers");
   GLADE_HOOKUP_OBJECT (admin, create_users, "create_users");
   GLADE_HOOKUP_OBJECT (admin, read_fix_users, "read_fix_users");
   GLADE_HOOKUP_OBJECT (admin, treeviewreadusers, "treeviewreadusers");
@@ -4003,7 +4037,6 @@ create_admin (void)
   GLADE_HOOKUP_OBJECT (admin, image10, "image10");
   GLADE_HOOKUP_OBJECT (admin, label84, "label84");
   GLADE_HOOKUP_OBJECT (admin, succupdateusers, "succupdateusers");
-  GLADE_HOOKUP_OBJECT (admin, comboboxuproleusers, "comboboxuproleusers");
   GLADE_HOOKUP_OBJECT (admin, updateyearusers, "updateyearusers");
   GLADE_HOOKUP_OBJECT (admin, entry29, "entry29");
   GLADE_HOOKUP_OBJECT (admin, entryUPyeareusers, "entryUPyeareusers");
@@ -4027,6 +4060,7 @@ create_admin (void)
   GLADE_HOOKUP_OBJECT (admin, image13, "image13");
   GLADE_HOOKUP_OBJECT (admin, label87, "label87");
   GLADE_HOOKUP_OBJECT (admin, image375, "image375");
+  GLADE_HOOKUP_OBJECT (admin, comboboxuproleusers, "comboboxuproleusers");
   GLADE_HOOKUP_OBJECT (admin, update_users, "update_users");
   GLADE_HOOKUP_OBJECT (admin, fixed40, "fixed40");
   GLADE_HOOKUP_OBJECT (admin, entryIDdlusers, "entryIDdlusers");
@@ -4075,7 +4109,6 @@ create_admin (void)
   GLADE_HOOKUP_OBJECT (admin, fixed31, "fixed31");
   GLADE_HOOKUP_OBJECT (admin, treeviewroleusers, "treeviewroleusers");
   GLADE_HOOKUP_OBJECT (admin, filterusers, "filterusers");
-  GLADE_HOOKUP_OBJECT (admin, radiobuttonDOCusers, "radiobuttonDOCusers");
   GLADE_HOOKUP_OBJECT (admin, statmaleusers, "statmaleusers");
   GLADE_HOOKUP_OBJECT (admin, statfemaleusers, "statfemaleusers");
   GLADE_HOOKUP_OBJECT (admin, buttonshowstatusers, "buttonshowstatusers");
@@ -4083,14 +4116,16 @@ create_admin (void)
   GLADE_HOOKUP_OBJECT (admin, hbox3, "hbox3");
   GLADE_HOOKUP_OBJECT (admin, image4, "image4");
   GLADE_HOOKUP_OBJECT (admin, label77, "label77");
-  GLADE_HOOKUP_OBJECT (admin, radiobuttonNURusers, "radiobuttonNURusers");
-  GLADE_HOOKUP_OBJECT (admin, radiobuttonADusers, "radiobuttonADusers");
   GLADE_HOOKUP_OBJECT (admin, buttonlogoutSusers, "buttonlogoutSusers");
   GLADE_HOOKUP_OBJECT (admin, alignment14, "alignment14");
   GLADE_HOOKUP_OBJECT (admin, hbox14, "hbox14");
   GLADE_HOOKUP_OBJECT (admin, image15, "image15");
   GLADE_HOOKUP_OBJECT (admin, label89, "label89");
   GLADE_HOOKUP_OBJECT (admin, image377, "image377");
+  GLADE_HOOKUP_OBJECT (admin, radiobuttonDOCusers, "radiobuttonDOCusers");
+  GLADE_HOOKUP_OBJECT (admin, radiobuttonNURusers, "radiobuttonNURusers");
+  GLADE_HOOKUP_OBJECT (admin, radiobuttonADusers, "radiobuttonADusers");
+  GLADE_HOOKUP_OBJECT (admin, DIRusers, "DIRusers");
   GLADE_HOOKUP_OBJECT (admin, stat_users, "stat_users");
   GLADE_HOOKUP_OBJECT (admin, user, "user");
   GLADE_HOOKUP_OBJECT (admin, notebook7, "notebook7");
@@ -4127,13 +4162,13 @@ create_admin (void)
   GLADE_HOOKUP_OBJECT (admin, hbox17, "hbox17");
   GLADE_HOOKUP_OBJECT (admin, image18, "image18");
   GLADE_HOOKUP_OBJECT (admin, label92, "label92");
+  GLADE_HOOKUP_OBJECT (admin, image378, "image378");
+  GLADE_HOOKUP_OBJECT (admin, successamin, "successamin");
   GLADE_HOOKUP_OBJECT (admin, logout_amin1, "logout_amin1");
   GLADE_HOOKUP_OBJECT (admin, alignment18, "alignment18");
   GLADE_HOOKUP_OBJECT (admin, hbox18, "hbox18");
   GLADE_HOOKUP_OBJECT (admin, image19, "image19");
   GLADE_HOOKUP_OBJECT (admin, label93, "label93");
-  GLADE_HOOKUP_OBJECT (admin, image378, "image378");
-  GLADE_HOOKUP_OBJECT (admin, successamin, "successamin");
   GLADE_HOOKUP_OBJECT (admin, create_label_amin, "create_label_amin");
   GLADE_HOOKUP_OBJECT (admin, fixed32, "fixed32");
   GLADE_HOOKUP_OBJECT (admin, treeview4, "treeview4");
@@ -4142,12 +4177,12 @@ create_admin (void)
   GLADE_HOOKUP_OBJECT (admin, hbox25, "hbox25");
   GLADE_HOOKUP_OBJECT (admin, image26, "image26");
   GLADE_HOOKUP_OBJECT (admin, label100, "label100");
+  GLADE_HOOKUP_OBJECT (admin, image379, "image379");
   GLADE_HOOKUP_OBJECT (admin, logout_amin2, "logout_amin2");
   GLADE_HOOKUP_OBJECT (admin, alignment22, "alignment22");
   GLADE_HOOKUP_OBJECT (admin, hbox22, "hbox22");
   GLADE_HOOKUP_OBJECT (admin, image23, "image23");
   GLADE_HOOKUP_OBJECT (admin, label97, "label97");
-  GLADE_HOOKUP_OBJECT (admin, image379, "image379");
   GLADE_HOOKUP_OBJECT (admin, read_label_amin, "read_label_amin");
   GLADE_HOOKUP_OBJECT (admin, fixed11, "fixed11");
   GLADE_HOOKUP_OBJECT (admin, fixed33, "fixed33");
@@ -4205,12 +4240,12 @@ create_admin (void)
   GLADE_HOOKUP_OBJECT (admin, label158, "label158");
   GLADE_HOOKUP_OBJECT (admin, label159, "label159");
   GLADE_HOOKUP_OBJECT (admin, combobox_state_amin2, "combobox_state_amin2");
+  GLADE_HOOKUP_OBJECT (admin, label148, "label148");
   GLADE_HOOKUP_OBJECT (admin, logout_amin3, "logout_amin3");
   GLADE_HOOKUP_OBJECT (admin, alignment23, "alignment23");
   GLADE_HOOKUP_OBJECT (admin, hbox23, "hbox23");
   GLADE_HOOKUP_OBJECT (admin, image24, "image24");
   GLADE_HOOKUP_OBJECT (admin, label98, "label98");
-  GLADE_HOOKUP_OBJECT (admin, label148, "label148");
   GLADE_HOOKUP_OBJECT (admin, update_label_amin, "update_label_amin");
   GLADE_HOOKUP_OBJECT (admin, fixed36, "fixed36");
   GLADE_HOOKUP_OBJECT (admin, entry24, "entry24");
@@ -4282,12 +4317,12 @@ create_admin (void)
   GLADE_HOOKUP_OBJECT (admin, labeladminets, "labeladminets");
   GLADE_HOOKUP_OBJECT (admin, fixed37, "fixed37");
   GLADE_HOOKUP_OBJECT (admin, treeview1, "treeview1");
+  GLADE_HOOKUP_OBJECT (admin, buttonrefreshamin, "buttonrefreshamin");
   GLADE_HOOKUP_OBJECT (admin, logout_amin7, "logout_amin7");
   GLADE_HOOKUP_OBJECT (admin, alignment20, "alignment20");
   GLADE_HOOKUP_OBJECT (admin, hbox20, "hbox20");
   GLADE_HOOKUP_OBJECT (admin, image21, "image21");
   GLADE_HOOKUP_OBJECT (admin, label95, "label95");
-  GLADE_HOOKUP_OBJECT (admin, buttonrefreshamin, "buttonrefreshamin");
   GLADE_HOOKUP_OBJECT (admin, labeladminetshistory, "labeladminetshistory");
   GLADE_HOOKUP_OBJECT (admin, ets, "ets");
   GLADE_HOOKUP_OBJECT (admin, label157, "label157");
@@ -6949,14 +6984,14 @@ create_Doctor (void)
   GSList *radiobutnbtot_SDOC_group = NULL;
   GtkWidget *radiobutqtytotblood_SDOC;
   GtkWidget *radiobutquantperdon_SDOC;
+  GtkWidget *laboutputtotqty_SDOC;
+  GtkWidget *labtoutputnum_SDOC;
+  GtkWidget *laboutputaverage_SDOC;
   GtkWidget *butlogout_SDOC;
   GtkWidget *alignment348;
   GtkWidget *hbox348;
   GtkWidget *image358;
   GtkWidget *label1578;
-  GtkWidget *laboutputtotqty_SDOC;
-  GtkWidget *labtoutputnum_SDOC;
-  GtkWidget *laboutputaverage_SDOC;
   GtkWidget *label_SDOC;
   GtkWidget *DOCTORLAB_DOC;
 
@@ -7592,6 +7627,21 @@ create_Doctor (void)
   gtk_radio_button_set_group (GTK_RADIO_BUTTON (radiobutquantperdon_SDOC), radiobutnbtot_SDOC_group);
   radiobutnbtot_SDOC_group = gtk_radio_button_get_group (GTK_RADIO_BUTTON (radiobutquantperdon_SDOC));
 
+  laboutputtotqty_SDOC = gtk_label_new (_("..."));
+  gtk_widget_show (laboutputtotqty_SDOC);
+  gtk_fixed_put (GTK_FIXED (fixed_SDOC), laboutputtotqty_SDOC, 520, 208);
+  gtk_widget_set_size_request (laboutputtotqty_SDOC, 504, 32);
+
+  labtoutputnum_SDOC = gtk_label_new (_("..."));
+  gtk_widget_show (labtoutputnum_SDOC);
+  gtk_fixed_put (GTK_FIXED (fixed_SDOC), labtoutputnum_SDOC, 472, 112);
+  gtk_widget_set_size_request (labtoutputnum_SDOC, 600, 40);
+
+  laboutputaverage_SDOC = gtk_label_new (_("..."));
+  gtk_widget_show (laboutputaverage_SDOC);
+  gtk_fixed_put (GTK_FIXED (fixed_SDOC), laboutputaverage_SDOC, 544, 304);
+  gtk_widget_set_size_request (laboutputaverage_SDOC, 488, 40);
+
   butlogout_SDOC = gtk_button_new ();
   gtk_widget_show (butlogout_SDOC);
   gtk_fixed_put (GTK_FIXED (fixed_SDOC), butlogout_SDOC, 984, 16);
@@ -7612,21 +7662,6 @@ create_Doctor (void)
   label1578 = gtk_label_new_with_mnemonic (_("LOG OUT"));
   gtk_widget_show (label1578);
   gtk_box_pack_start (GTK_BOX (hbox348), label1578, FALSE, FALSE, 0);
-
-  laboutputtotqty_SDOC = gtk_label_new (_("..."));
-  gtk_widget_show (laboutputtotqty_SDOC);
-  gtk_fixed_put (GTK_FIXED (fixed_SDOC), laboutputtotqty_SDOC, 520, 208);
-  gtk_widget_set_size_request (laboutputtotqty_SDOC, 504, 32);
-
-  labtoutputnum_SDOC = gtk_label_new (_("..."));
-  gtk_widget_show (labtoutputnum_SDOC);
-  gtk_fixed_put (GTK_FIXED (fixed_SDOC), labtoutputnum_SDOC, 472, 112);
-  gtk_widget_set_size_request (labtoutputnum_SDOC, 600, 40);
-
-  laboutputaverage_SDOC = gtk_label_new (_("..."));
-  gtk_widget_show (laboutputaverage_SDOC);
-  gtk_fixed_put (GTK_FIXED (fixed_SDOC), laboutputaverage_SDOC, 544, 304);
-  gtk_widget_set_size_request (laboutputaverage_SDOC, 488, 40);
 
   label_SDOC = gtk_label_new (_("<span font_size=\"xx-large\" color=\"#BE3144\" font_family=\"Courier New\"><i><b>STATISTICS</b></i></span>"));
   gtk_widget_show (label_SDOC);
@@ -7684,7 +7719,7 @@ create_Doctor (void)
                     G_CALLBACK (on_radiobutton3_toggled),
                     NULL);
   g_signal_connect ((gpointer) butlogout_SDOC, "clicked",
-                    G_CALLBACK (on_button6_clicked),
+                    G_CALLBACK (on_butlogout_SDOC_clicked),
                     NULL);
 
   /* Store pointers to all widgets, for use by lookup_widget(). */
@@ -7800,14 +7835,14 @@ create_Doctor (void)
   GLADE_HOOKUP_OBJECT (Doctor, radiobutnbtot_SDOC, "radiobutnbtot_SDOC");
   GLADE_HOOKUP_OBJECT (Doctor, radiobutqtytotblood_SDOC, "radiobutqtytotblood_SDOC");
   GLADE_HOOKUP_OBJECT (Doctor, radiobutquantperdon_SDOC, "radiobutquantperdon_SDOC");
+  GLADE_HOOKUP_OBJECT (Doctor, laboutputtotqty_SDOC, "laboutputtotqty_SDOC");
+  GLADE_HOOKUP_OBJECT (Doctor, labtoutputnum_SDOC, "labtoutputnum_SDOC");
+  GLADE_HOOKUP_OBJECT (Doctor, laboutputaverage_SDOC, "laboutputaverage_SDOC");
   GLADE_HOOKUP_OBJECT (Doctor, butlogout_SDOC, "butlogout_SDOC");
   GLADE_HOOKUP_OBJECT (Doctor, alignment348, "alignment348");
   GLADE_HOOKUP_OBJECT (Doctor, hbox348, "hbox348");
   GLADE_HOOKUP_OBJECT (Doctor, image358, "image358");
   GLADE_HOOKUP_OBJECT (Doctor, label1578, "label1578");
-  GLADE_HOOKUP_OBJECT (Doctor, laboutputtotqty_SDOC, "laboutputtotqty_SDOC");
-  GLADE_HOOKUP_OBJECT (Doctor, labtoutputnum_SDOC, "labtoutputnum_SDOC");
-  GLADE_HOOKUP_OBJECT (Doctor, laboutputaverage_SDOC, "laboutputaverage_SDOC");
   GLADE_HOOKUP_OBJECT (Doctor, label_SDOC, "label_SDOC");
   GLADE_HOOKUP_OBJECT (Doctor, DOCTORLAB_DOC, "DOCTORLAB_DOC");
 
